@@ -3,6 +3,7 @@
     experimental-features = [ "nix-command" "flakes" ];
 
     substituters = [ "https://mirrors.ustc.edu.cn/nix-channels/store" ];
+	trusted-users = ["zapan"];
   };
 
   users.users.zapan = {
