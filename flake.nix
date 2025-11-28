@@ -17,7 +17,7 @@
     nixosConfigurations.nixos-vm = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
-        ./hosts/server/nixos-vm
+        ./hosts/desktop/nixos-vm
         home-manager.nixosModules.home-manager
         {
           home-manager = {
