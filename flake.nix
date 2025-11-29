@@ -23,7 +23,7 @@
           home-manager = {
             useGlobalPkgs = true;
             useUserPackages = true;
-            users.zapan = import ./home/zapan.nix;
+            users.zapan = import ./users/zapan/home.nix;
             backupFileExtension = "backup";
           };
         }

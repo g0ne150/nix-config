@@ -2,8 +2,7 @@
 
 {
   imports = [ # Include the results of the hardware scan.
-    ../../../modules/base.nix
-    ../../../modules/gui-base.nix
+    ../../../users/zapan/nixos.nix
 
     ./hardware-configuration.nix
   ];
