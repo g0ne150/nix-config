@@ -13,7 +13,7 @@
 
   environment.systemPackages = with pkgs; [
     kitty
-    gnome.nautilus
+    nautilus
     pkgs.libheif
     pkgs.libheif.out
     pkgs.xdg-utils

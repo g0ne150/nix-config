@@ -18,7 +18,7 @@
       # https://github.com/nix-community/home-manager/issues/632
       program_options = {
         # file_manager = "${pkgs.xdg-utils}/bin/xdg-open";
-        file_manager = "${pkgs.gnome.nautilus}/bin/nautilus";
+        file_manager = "${pkgs.nautilus}/bin/nautilus";
       };
     };
   };
