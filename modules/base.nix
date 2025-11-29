@@ -14,6 +14,10 @@
     ]; # wheel group for Enable ‘sudo’ for the user.
   };
 
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+
+  networking.networkmanager.enable = true;
+
   nixpkgs.config.allowUnfree = true;
 
   time.timeZone = "Asia/Shanghai";

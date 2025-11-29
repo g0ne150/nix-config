@@ -14,11 +14,8 @@
     efi.canTouchEfiVariables = true;
   };
 
-  # Use latest kernel.
-  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking.hostName = "nixos-vm"; # Define your hostname.
-  networking.networkmanager.enable = true;
 
 
   # List packages installed in system profile.
