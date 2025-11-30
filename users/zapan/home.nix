@@ -34,6 +34,7 @@ in
       niri = "niri";
       waybar = "waybar";
       qutebrowser = "qutebrowser";
+      Throne = "Throne";
     };
   in builtins.mapAttrs (name:
     subpath: {
@@ -43,6 +44,7 @@ in
 
   dconf.settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
 
+# Polkit gnome agent systemd user servcie
 systemd.user.services.polkit-gnome-authentication-agent-1 = {
   Unit = {
     Description = "polkit-gnome-authentication-agent-1";
@@ -60,6 +62,11 @@ systemd.user.services.polkit-gnome-authentication-agent-1 = {
     TimeoutStopSec = 10;
   };
 };
+
+  programs.fzf = {
+    enable = true;
+    enableBashIntegration = true;
+  };
 
   home.stateVersion = "25.05";
 }

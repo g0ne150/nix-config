@@ -40,6 +40,7 @@
     lm_sensors
 
     ripgrep
+    fzf
     jq
     fd
 

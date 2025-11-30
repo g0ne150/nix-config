@@ -1,9 +1,8 @@
-{ pkgs, ... }: {
+{ pkgs, pkgs-unstable, lib, ... }: {
 
-  environment.systemPackages = with pkgs; [
-    polkit_gnome
-    bitwarden-desktop
-    qutebrowser
+  environment.systemPackages = lib.mkMerge [
+    (with pkgs; [ polkit_gnome bitwarden-desktop qutebrowser ])
+    (with pkgs-unstable; [ throne ])
   ];
 
   services.hardware.bolt.enable = true;
