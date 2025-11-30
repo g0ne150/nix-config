@@ -15,7 +15,7 @@
 
   networking.hostName = "zenbook"; # Define your hostname.
 
-  services.openssh.enable = true;
+  # services.openssh.enable = true;
 
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
