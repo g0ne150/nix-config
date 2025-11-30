@@ -14,6 +14,21 @@
     };
   };
   outputs = { self, nixpkgs, home-manager, ... }: {
+    nixosConfigurations.zenbook = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      modules = [
+        ./hosts/desktop/zenbook
+        home-manager.nixosModules.home-manager
+        {
+          home-manager = {
+            useGlobalPkgs = true;
+            useUserPackages = true;
+            users.zapan = import ./users/zapan/home.nix;
+            backupFileExtension = "backup";
+          };
+        }
+      ];
+    };
     nixosConfigurations.nixos-vm = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [

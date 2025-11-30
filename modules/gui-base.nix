@@ -1,5 +1,10 @@
 { pkgs, ... }: {
 
+  environment.systemPackages = with pkgs; [
+    bitwarden-desktop
+    qutebrowser
+  ];
+
   fonts = {
     packages = with pkgs; [
       noto-fonts

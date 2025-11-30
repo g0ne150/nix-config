@@ -22,7 +22,6 @@
     swayidle
     mako
     xwayland-satellite
-    qutebrowser
   ];
   security.polkit.enable = true; # polkit
   services.gnome.gnome-keyring.enable = true; # secret service
