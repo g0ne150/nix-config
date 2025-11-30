@@ -43,6 +43,7 @@ in
       fcitx5 = "fcitx5";
       qutebrowser = "qutebrowser";
       Throne = "Throne";
+      mako = "mako";
     };
   in builtins.mapAttrs (name:
     subpath: {
