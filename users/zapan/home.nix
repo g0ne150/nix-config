@@ -1,7 +1,10 @@
-{ config, pkgs, ... }: 
+{ config, pkgs, home-manager, ... }: 
+let 
+  username = "zapan";
+in
 {
   home = {
-    username = "zapan";
+    inherit username;
     homeDirectory = "/home/zapan";
   };
 
@@ -37,6 +40,8 @@
       source = create_symlink "${dotfiles}/${subpath}";
       recursive = true;
     }) configs;
+
+  dconf.settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
 
   home.stateVersion = "25.05";
 }
