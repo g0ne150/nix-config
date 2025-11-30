@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ config, pkgs, ... }: 
+{
   home = {
     username = "zapan";
     homeDirectory = "/home/zapan";
@@ -22,6 +23,19 @@
       };
     };
   };
+
+  xdg.configFile = let
+    dotfiles = "${config.home.homeDirectory}/nix-dotfiles/dot_config";
+    create_symlink = path: config.lib.file.mkOutOfStoreSymlink path;
+    configs = {
+      niri = "niri";
+      waybar = "waybar";
+    };
+  in builtins.mapAttrs (name:
+    subpath: {
+      source = create_symlink "${dotfiles}/${subpath}";
+      recursive = true;
+    }) configs;
 
   home.stateVersion = "25.05";
 }

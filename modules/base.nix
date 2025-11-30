@@ -34,6 +34,8 @@
     wget
     git
     curl
+    tree
+    htop
     lm_sensors
   ];
 }
