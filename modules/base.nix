@@ -38,11 +38,29 @@
     tree
     htop
     lm_sensors
+    sysstat
+
+    zip
+    unzip
+    xz
+    zstd
 
     ripgrep
     fzf
     jq
     fd
+    lazygit
+
+    mtr
+    iperf3
+    dnsutils
+    nmap
+
+    libgcc
+    nodejs
+    python314
+    jdk
+    lua
 
     tlrc
   ];

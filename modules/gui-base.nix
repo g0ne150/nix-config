@@ -1,11 +1,22 @@
 { pkgs, pkgs-unstable, lib, ... }: {
 
   environment.systemPackages = lib.mkMerge [
-    (with pkgs; [ polkit_gnome bitwarden-desktop qutebrowser ])
+    (with pkgs; [ polkit_gnome bitwarden-desktop qutebrowser neovim ])
     (with pkgs-unstable; [ throne ])
   ];
 
   services.hardware.bolt.enable = true;
+
+  # rtkit (optional, recommended) allows Pipewire to use the realtime scheduler for increased performance.
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true; # if not already enabled
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    # If you want to use JACK applications, uncomment the following
+    #jack.enable = true;
+  };
 
   fonts = {
     packages = with pkgs; [
@@ -20,6 +31,14 @@
     ];
 
     enableDefaultPackages = true;
+  };
+
+  i18n.inputMethod = {
+    enable = true;
+    type = "fcitx5";
+    fcitx5.addons = with pkgs; [
+      fcitx5-rime
+    ];
   };
 
   programs.dconf.enable = true;

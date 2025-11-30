@@ -13,7 +13,13 @@ in
     userName = "Zapan Gao";
     userEmail = "g0ne150@hotmail.com";
   };
-  programs.bash = { enable = true; };
+  programs.bash = { 
+    enable = true;
+    shellAliases = {
+      proxy-on = "export {all,http,https}_proxy=http://127.0.0.1:1080;";
+      proxy-off = "unset {all,http,https}_proxy";
+    };
+  };
 
   services.udiskie = {
     enable = true;
@@ -33,6 +39,8 @@ in
     configs = {
       niri = "niri";
       waybar = "waybar";
+      fcitx = "fcitx";
+      fcitx5 = "fcitx5";
       qutebrowser = "qutebrowser";
       Throne = "Throne";
     };
