@@ -37,5 +37,11 @@
     tree
     htop
     lm_sensors
+
+    ripgrep
+    jq
+    fd
+
+    tlrc
   ];
 }

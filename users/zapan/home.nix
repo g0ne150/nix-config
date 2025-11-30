@@ -30,6 +30,7 @@
     configs = {
       niri = "niri";
       waybar = "waybar";
+      qutebrowser = "qutebrowser";
     };
   in builtins.mapAttrs (name:
     subpath: {

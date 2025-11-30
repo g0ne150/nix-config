@@ -5,6 +5,8 @@
     qutebrowser
   ];
 
+  services.hardware.bolt.enable = true;
+
   fonts = {
     packages = with pkgs; [
       noto-fonts
