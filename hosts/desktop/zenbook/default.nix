@@ -3,6 +3,7 @@
 {
   imports = [ # Include the results of the hardware scan.
     ../../../users/zapan/nixos.nix
+    ../../../modules/battery.nix
 
     ./hardware-configuration.nix
   ];

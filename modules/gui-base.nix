@@ -2,7 +2,7 @@
 
   environment.systemPackages = lib.mkMerge [
     (with pkgs; [ polkit_gnome seahorse bitwarden-desktop qutebrowser neovim mpv jellyfin-mpv-shim ])
-    (with pkgs-unstable; [ throne ])
+    (with pkgs-unstable; [  ])
   ];
 
   services.hardware.bolt.enable = true;
@@ -24,6 +24,11 @@
     pulse.enable = true;
     # If you want to use JACK applications, uncomment the following
     # jack.enable = true;
+  };
+
+  programs.throne = {
+    enable = true;
+    tunMode.enable = true;
   };
 
   fonts = {
