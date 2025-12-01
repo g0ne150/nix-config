@@ -6,23 +6,25 @@ in {
     homeDirectory = "/home/zapan";
   };
 
-  programs.git = {
-    enable = true;
-    settings.user = {
-      name = "Zapan Gao";
-      email = "g0ne150@hotmail.com";
+  programs = {
+    git = {
+      enable = true;
+      settings.user = {
+        name = "Zapan Gao";
+        email = "g0ne150@hotmail.com";
+      };
     };
-  };
-  programs.bash = {
-    enable = true;
-    shellAliases = {
-      proxy-on = "export {all,http,https}_proxy=http://127.0.0.1:1080;";
-      proxy-off = "unset {all,http,https}_proxy";
+    bash = {
+      enable = true;
+      shellAliases = {
+        proxy-on = "export {all,http,https}_proxy=http://127.0.0.1:1080;";
+        proxy-off = "unset {all,http,https}_proxy";
+      };
     };
-  };
-  programs.fzf = {
-    enable = true;
-    enableBashIntegration = true;
+    fzf = {
+      enable = true;
+      enableBashIntegration = true;
+    };
   };
 
   services.udiskie = {
