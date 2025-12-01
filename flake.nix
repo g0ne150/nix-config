@@ -15,10 +15,8 @@
     };
   };
   outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, ... }: {
-    nixosConfigurations.zenbook = let
-      system = "x86_64-linux";
-    in
-    nixpkgs.lib.nixosSystem {
+    nixosConfigurations.zenbook = let system = "x86_64-linux";
+    in nixpkgs.lib.nixosSystem {
       specialArgs = {
         pkgs-unstable = import nixpkgs-unstable {
           inherit system;
