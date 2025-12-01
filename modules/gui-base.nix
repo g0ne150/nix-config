@@ -1,7 +1,7 @@
 { pkgs, pkgs-unstable, lib, ... }: {
 
   environment.systemPackages = lib.mkMerge [
-    (with pkgs; [ polkit_gnome seahorse bitwarden-desktop qutebrowser neovim mpv jellyfin-mpv-shim ])
+    (with pkgs; [ polkit_gnome seahorse bitwarden-desktop qutebrowser neovim mpv jellyfin-mpv-shim wechat ])
     (with pkgs-unstable; [  ])
   ];
 
