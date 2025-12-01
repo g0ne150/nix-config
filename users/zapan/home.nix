@@ -22,6 +22,10 @@ in
       proxy-off = "unset {all,http,https}_proxy";
     };
   };
+  programs.fzf = {
+    enable = true;
+    enableBashIntegration = true;
+  };
 
   services.udiskie = {
     enable = true;
@@ -34,24 +38,6 @@ in
       };
     };
   };
-
-  xdg.configFile = let
-    dotfiles = "${config.home.homeDirectory}/nix-dotfiles/dot_config";
-    create_symlink = path: config.lib.file.mkOutOfStoreSymlink path;
-    configs = {
-      niri = "niri";
-      waybar = "waybar";
-      fcitx = "fcitx";
-      fcitx5 = "fcitx5";
-      qutebrowser = "qutebrowser";
-      Throne = "Throne";
-      mako = "mako";
-    };
-  in builtins.mapAttrs (name:
-    subpath: {
-      source = create_symlink "${dotfiles}/${subpath}";
-      recursive = true;
-    }) configs;
 
   dconf.settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
 
@@ -74,10 +60,30 @@ systemd.user.services.polkit-gnome-authentication-agent-1 = {
   };
 };
 
-  programs.fzf = {
-    enable = true;
-    enableBashIntegration = true;
-  };
+  xdg.configFile = let
+    dotfiles = "${config.home.homeDirectory}/nix-dotfiles/dot_config";
+    create_symlink = path: config.lib.file.mkOutOfStoreSymlink path;
+    configs = {
+      niri = "niri";
+      waybar = "waybar";
+      fcitx = "fcitx";
+      fcitx5 = "fcitx5";
+      qutebrowser = "qutebrowser";
+      Throne = "Throne";
+      mako = "mako";
+    };
+  in builtins.mapAttrs (name:
+    subpath: {
+      source = create_symlink "${dotfiles}/${subpath}";
+      recursive = true;
+    }) configs;
+
+
+  # home.file.".local/share/fcitx5/rime/default.custom.yaml" = {
+  #   source = .local/share/fcitx5/rime/default.custom.yaml;
+  #   target = "nix-dotfiles/dot_local/share/fcitx5/rime/default.custom.yaml";
+  # };
+
 
   home.stateVersion = "25.05";
 }

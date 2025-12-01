@@ -75,10 +75,14 @@
     nmap
 
     libgcc
+    gcc
     nodejs
     python314
     jdk
     lua
+    go
+    rustc
+    cargo
 
     tlrc
   ];
