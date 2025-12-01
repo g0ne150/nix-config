@@ -1,8 +1,6 @@
-{ config, pkgs, home-manager, ... }: 
-let 
-  username = "zapan";
-in
-{
+{ config, pkgs, home-manager, ... }:
+let username = "zapan";
+in {
   home = {
     inherit username;
     homeDirectory = "/home/zapan";
@@ -15,7 +13,7 @@ in
       email = "g0ne150@hotmail.com";
     };
   };
-  programs.bash = { 
+  programs.bash = {
     enable = true;
     shellAliases = {
       proxy-on = "export {all,http,https}_proxy=http://127.0.0.1:1080;";
@@ -41,24 +39,23 @@ in
 
   dconf.settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
 
-# Polkit gnome agent systemd user servcie
-systemd.user.services.polkit-gnome-authentication-agent-1 = {
-  Unit = {
-    Description = "polkit-gnome-authentication-agent-1";
-    Wants = [ "graphical-session.target" ];
-    After = [ "graphical-session.target" ];
+  # Polkit gnome agent systemd user servcie
+  systemd.user.services.polkit-gnome-authentication-agent-1 = {
+    Unit = {
+      Description = "polkit-gnome-authentication-agent-1";
+      Wants = [ "graphical-session.target" ];
+      After = [ "graphical-session.target" ];
+    };
+    Install = { WantedBy = [ "graphical-session.target" ]; };
+    Service = {
+      Type = "simple";
+      ExecStart =
+        "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+      Restart = "on-failure";
+      RestartSec = 1;
+      TimeoutStopSec = 10;
+    };
   };
-  Install = {
-    WantedBy = [ "graphical-session.target" ];
-  };
-  Service = {
-    Type = "simple";
-    ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
-    Restart = "on-failure";
-    RestartSec = 1;
-    TimeoutStopSec = 10;
-  };
-};
 
   xdg.configFile = let
     dotfiles = "${config.home.homeDirectory}/nix-dotfiles/dot_config";
@@ -72,18 +69,15 @@ systemd.user.services.polkit-gnome-authentication-agent-1 = {
       Throne = "Throne";
       mako = "mako";
     };
-  in builtins.mapAttrs (name:
-    subpath: {
-      source = create_symlink "${dotfiles}/${subpath}";
-      recursive = true;
-    }) configs;
-
+  in builtins.mapAttrs (name: subpath: {
+    source = create_symlink "${dotfiles}/${subpath}";
+    recursive = true;
+  }) configs;
 
   # home.file.".local/share/fcitx5/rime/default.custom.yaml" = {
   #   source = .local/share/fcitx5/rime/default.custom.yaml;
   #   target = "nix-dotfiles/dot_local/share/fcitx5/rime/default.custom.yaml";
   # };
-
 
   home.stateVersion = "25.05";
 }

@@ -1,8 +1,19 @@
 { pkgs, pkgs-unstable, lib, ... }: {
 
   environment.systemPackages = lib.mkMerge [
-    (with pkgs; [ polkit_gnome seahorse bitwarden-desktop qutebrowser neovim tree-sitter mpv jellyfin-mpv-shim wechat ])
-    (with pkgs-unstable; [  ])
+    (with pkgs; [
+      polkit_gnome
+      seahorse
+      bitwarden-desktop
+      qutebrowser
+      neovim
+      tree-sitter
+      statix
+      mpv
+      jellyfin-mpv-shim
+      wechat
+    ])
+    (with pkgs-unstable; [ ])
   ];
 
   services.hardware.bolt.enable = true;
@@ -48,9 +59,7 @@
   i18n.inputMethod = {
     enable = true;
     type = "fcitx5";
-    fcitx5.addons = with pkgs; [
-      fcitx5-rime
-    ];
+    fcitx5.addons = with pkgs; [ fcitx5-rime ];
   };
 
   programs.dconf.enable = true;
