@@ -27,7 +27,8 @@
     extraLocales = [ "zh_CN.UTF-8/UTF-8" ];
   };
 
-  programs.ssh.startAgent = true;
+  # replace by gnome keyring 
+  # programs.ssh.startAgent = true;
 
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.

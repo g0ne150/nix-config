@@ -1,7 +1,7 @@
 { pkgs, ... }: {
 
   # Gnome display manager
-  services.xserver.displayManager.gdm = {
+  services.displayManager.gdm = {
     enable = true;
     wayland = true;
   };
@@ -23,9 +23,6 @@
     mako
     xwayland-satellite
   ];
-  security.polkit.enable = true; # polkit
-  services.gnome.gnome-keyring.enable = true; # secret service
-  security.pam.services.swaylock = { };
 
   programs.waybar.enable = true; # top bar
 

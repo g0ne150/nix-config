@@ -1,7 +1,7 @@
 { pkgs, pkgs-unstable, lib, ... }: {
 
   environment.systemPackages = lib.mkMerge [
-    (with pkgs; [ polkit_gnome bitwarden-desktop qutebrowser neovim mpv jellyfin-mpv-shim ])
+    (with pkgs; [ polkit_gnome seahorse bitwarden-desktop qutebrowser neovim mpv jellyfin-mpv-shim ])
     (with pkgs-unstable; [ throne ])
   ];
 
@@ -9,6 +9,10 @@
 
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
+
+  security.polkit.enable = true; # polkit
+  services.gnome.gnome-keyring.enable = true; # secret service
+  security.pam.services.swaylock = { };
 
   # rtkit (optional, recommended) allows Pipewire to use the realtime scheduler for increased performance.
   security.rtkit.enable = true;
@@ -26,8 +30,7 @@
     packages = with pkgs; [
       noto-fonts
       noto-fonts-cjk-sans
-      noto-fonts-extra
-      noto-fonts-emoji
+      noto-fonts-color-emoji
 
       nerd-fonts.jetbrains-mono
       nerd-fonts.ubuntu-mono

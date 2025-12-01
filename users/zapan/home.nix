@@ -10,8 +10,10 @@ in
 
   programs.git = {
     enable = true;
-    userName = "Zapan Gao";
-    userEmail = "g0ne150@hotmail.com";
+    settings.user = {
+      name = "Zapan Gao";
+      email = "g0ne150@hotmail.com";
+    };
   };
   programs.bash = { 
     enable = true;
