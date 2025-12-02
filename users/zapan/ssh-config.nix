@@ -13,7 +13,7 @@
       "kube-worker1.home" = {
         hostname = "zapan.club";
         port = 22223;
-        User = "zapan";
+        user = "zapan";
         forwardAgent = true;
         identityFile = "~/.ssh/general";
       };
