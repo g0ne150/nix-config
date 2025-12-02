@@ -90,5 +90,7 @@ in {
   # target = "nix-dotfiles/dot_local/share/fcitx5/rime/default.custom.yaml";
   # };
 
+  imports = [ ./ssh-config.nix ];
+
   home.stateVersion = "25.05";
 }
