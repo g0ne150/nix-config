@@ -2,9 +2,6 @@
 
   imports = [ ./swayidle.nix ];
 
-  programs.swaylock.enable = true;
-  security.pam.services.swaylock = { };
-
   # Gnome display manager
   services.displayManager.gdm = {
     enable = true;
