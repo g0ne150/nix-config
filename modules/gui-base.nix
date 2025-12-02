@@ -13,6 +13,7 @@
       mpv
       jellyfin-mpv-shim
       wechat
+      xorg.xprop
     ])
     (with pkgs-unstable; [ ])
   ];

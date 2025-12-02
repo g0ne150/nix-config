@@ -6,6 +6,12 @@ in {
     homeDirectory = "/home/zapan";
   };
 
+  home.sessionVariables = {
+    GTK_IM_MODULE = "fcitx";
+    QT_IM_MODULE = "fcitx";
+    XMODIFIERS = "@im=fcitx";
+  };
+
   programs = {
     git = {
       enable = true;
