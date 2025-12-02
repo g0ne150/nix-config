@@ -76,10 +76,18 @@ in {
     recursive = true;
   }) configs;
 
+  gtk = {
+    enable = true;
+    theme = {
+      name = "Adwaita-dark";
+      package = pkgs.gnome-themes-extra;
+    };
+  };
+
   # home.file.".local/share/fcitx5/rime/default.custom.yaml" = {
-    # source = .local/share/fcitx5/rime/default.custom.yaml;
-    # source = ../../../nix-dotfiles/dot_local/share/fcitx5/rime/default.custom.yaml;
-    # target = "nix-dotfiles/dot_local/share/fcitx5/rime/default.custom.yaml";
+  # source = .local/share/fcitx5/rime/default.custom.yaml;
+  # source = ../../../nix-dotfiles/dot_local/share/fcitx5/rime/default.custom.yaml;
+  # target = "nix-dotfiles/dot_local/share/fcitx5/rime/default.custom.yaml";
   # };
 
   home.stateVersion = "25.05";
