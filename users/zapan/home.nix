@@ -6,27 +6,6 @@ in {
     homeDirectory = "/home/zapan";
   };
 
-  programs = {
-    git = {
-      enable = true;
-      settings.user = {
-        name = "Zapan Gao";
-        email = "g0ne150@hotmail.com";
-      };
-    };
-    bash = {
-      enable = true;
-      shellAliases = {
-        proxy-on = "export {all,http,https}_proxy=http://127.0.0.1:1080;";
-        proxy-off = "unset {all,http,https}_proxy";
-      };
-    };
-    fzf = {
-      enable = true;
-      enableBashIntegration = true;
-    };
-  };
-
   services.udiskie = {
     enable = true;
     settings = {
@@ -84,14 +63,27 @@ in {
     };
   };
 
-  programs.swaylock.enable = true;
-  programs.swaylock.settings = {
-    color = "808080";
-    font-size = 24;
-    indicator-idle-visible = false;
-    indicator-radius = 100;
-    line-color = "ffffff";
-    show-failed-attempts = true;
+  programs = {
+    git = {
+      enable = true;
+      settings.user = {
+        name = "Zapan Gao";
+        email = "g0ne150@hotmail.com";
+      };
+    };
+
+    bash = {
+      enable = true;
+      shellAliases = {
+        proxy-on = "export {all,http,https}_proxy=http://127.0.0.1:1080;";
+        proxy-off = "unset {all,http,https}_proxy";
+      };
+    };
+
+    fzf = {
+      enable = true;
+      enableBashIntegration = true;
+    };
   };
 
   # home.file.".local/share/fcitx5/rime/default.custom.yaml" = {
@@ -100,7 +92,8 @@ in {
   # target = "nix-dotfiles/dot_local/share/fcitx5/rime/default.custom.yaml";
   # };
 
-  imports = [ ./ssh-config.nix ];
+  imports =
+    [ ./ssh-config.nix ../../modules/swayidle.nix ../../modules/swaylock.nix ];
 
   home.stateVersion = "25.05";
 }

@@ -1,7 +1,5 @@
 { pkgs, ... }: {
 
-  imports = [ ./swayidle.nix ];
-
   # Gnome display manager
   services.displayManager.gdm = {
     enable = true;
