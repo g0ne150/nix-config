@@ -1,5 +1,9 @@
 { pkgs, ... }: {
-  environment.systemPackages = with pkgs; [ podman-compose ];
+
+  environment = {
+    systemPackages = with pkgs; [ podman-compose ];
+    variables = { REGISTRY_AUTH_FILE = "$HOME/.config/containers/auth.json"; };
+  };
 
   virtualisation = {
     containers.enable = true;
