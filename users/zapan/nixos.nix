@@ -4,5 +4,6 @@
     ../../modules/gui-base.nix
     ../../modules/niri.nix
     ../../modules/podman.nix
+    ../../modules/neovim.nix
   ];
 }

@@ -7,7 +7,6 @@
       bitwarden-desktop
       qutebrowser
       evolution
-      neovim
       tree-sitter
       statix
       mpv
