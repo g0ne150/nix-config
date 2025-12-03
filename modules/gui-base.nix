@@ -17,11 +17,6 @@
     (with pkgs-unstable; [ ])
   ];
 
-  hardware.graphics = {
-    enable = true;
-    enable32Bit = true;
-  };
-
   services.hardware.bolt.enable = true;
 
   hardware.bluetooth.enable = true;

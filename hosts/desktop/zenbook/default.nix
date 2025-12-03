@@ -4,7 +4,7 @@
   imports = [ # Include the results of the hardware scan.
     ../../../users/zapan/nixos.nix
     ../../../modules/battery.nix
-
+    ../../../modules/intel-graphics.nix
     ./hardware-configuration.nix
   ];
 
