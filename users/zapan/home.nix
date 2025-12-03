@@ -92,8 +92,12 @@ in {
   # target = "nix-dotfiles/dot_local/share/fcitx5/rime/default.custom.yaml";
   # };
 
-  imports =
-    [ ./ssh-config.nix ../../modules/swayidle.nix ../../modules/swaylock.nix ];
+  imports = [
+    ./ssh-config.nix
+    ../../modules/swayidle.nix
+    ../../modules/swaylock.nix
+    ../../modules/neovim.nix
+  ];
 
   home.stateVersion = "25.05";
 }
