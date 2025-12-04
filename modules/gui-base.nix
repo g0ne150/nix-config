@@ -69,7 +69,7 @@
   qt = {
     enable = true;
     style = "adwaita-dark";
-    platformTheme = "gnome";
+    platformTheme = "qt5ct";
   };
 
   programs.dconf.enable = true;
