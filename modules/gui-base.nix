@@ -52,6 +52,8 @@
       nerd-fonts.jetbrains-mono
       nerd-fonts.ubuntu-mono
       nerd-fonts.comic-shanns-mono
+
+      lxgw-wenkai
     ];
 
     enableDefaultPackages = true;
@@ -69,7 +71,6 @@
   qt = {
     enable = true;
     style = "adwaita-dark";
-    platformTheme = "qt5ct";
   };
 
   programs.dconf.enable = true;

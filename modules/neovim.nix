@@ -1,4 +1,5 @@
 { pkgs, ... }: {
+  home.packages = with pkgs; [ marksman ];
   programs.neovim = {
     enable = true;
     defaultEditor = true;
