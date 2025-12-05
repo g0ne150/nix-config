@@ -49,6 +49,7 @@ in {
       qutebrowser = "qutebrowser";
       Throne = "Throne";
       mako = "mako";
+      kitty = "kitty";
     };
   in builtins.mapAttrs (name: subpath: {
     source = create_symlink "${dotfiles}/${subpath}";
