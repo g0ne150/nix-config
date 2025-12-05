@@ -1,6 +1,8 @@
 { ... }: {
   powerManagement.enable = true;
 
+  services.acpid.enable = true;
+
   services.tlp = {
     enable = true;
     settings = {

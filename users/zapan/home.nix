@@ -50,6 +50,7 @@ in {
       Throne = "Throne";
       mako = "mako";
       kitty = "kitty";
+      fuzzel = "fuzzel";
     };
   in builtins.mapAttrs (name: subpath: {
     source = create_symlink "${dotfiles}/${subpath}";
