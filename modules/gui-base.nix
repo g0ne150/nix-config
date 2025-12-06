@@ -2,6 +2,7 @@
 
   environment.systemPackages = lib.mkMerge [
     (with pkgs; [
+      brightnessctl
       polkit_gnome
       seahorse
       bitwarden-desktop
