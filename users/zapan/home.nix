@@ -39,7 +39,7 @@ in {
   };
 
   xdg.configFile = let
-    dotfiles = "${config.home.homeDirectory}/nix-dotfiles/dot_config";
+    dotfiles = "${config.home.homeDirectory}/nix-config/nix-dotfiles/dot_config";
     create_symlink = path: config.lib.file.mkOutOfStoreSymlink path;
     configs = {
       niri = "niri";
@@ -88,11 +88,9 @@ in {
     };
   };
 
-  # home.file.".local/share/fcitx5/rime/default.custom.yaml" = {
-  # source = .local/share/fcitx5/rime/default.custom.yaml;
-  # source = ../../../nix-dotfiles/dot_local/share/fcitx5/rime/default.custom.yaml;
-  # target = "nix-dotfiles/dot_local/share/fcitx5/rime/default.custom.yaml";
-  # };
+  home.file.".local/share/fcitx5/rime/default.custom.yaml" = {
+    source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix-config/nix-dotfiles/dot_local/share/fcitx5/rime/default.custom.yaml";
+  };
 
   imports = [
     ./ssh-config.nix
@@ -101,5 +99,5 @@ in {
     ../../modules/neovim.nix
   ];
 
-  home.stateVersion = "25.05";
+  home.stateVersion = "25.11";
 }
