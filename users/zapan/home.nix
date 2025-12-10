@@ -94,8 +94,10 @@ in {
 
   imports = [
     ./ssh-config.nix
-    ../../modules/swayidle.nix
-    ../../modules/swaylock.nix
+    # ../../modules/swayidle.nix
+    # ../../modules/swaylock.nix
+    ../../modules/hypridle.nix
+    ../../modules/hyprlock.nix
     ../../modules/neovim.nix
   ];
 
