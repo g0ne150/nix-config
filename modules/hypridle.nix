@@ -1,21 +1,30 @@
-{ ... }: {
-  services.hypridle = {
+{ pkgs, ... }: {
+  services.hypridle = let
+    lock = "${pkgs.hyprlock}/bin/hyprlock";
+    # lock = "${pkgs.systemd}/bin/loginctl lock-session";
+
+    brightnessctl = "${pkgs.brightnessctl}/bin/brightnessctl";
+
+    display = status:
+      "${pkgs.niri}/bin/niri msg action power-${status}-monitors";
+  in {
     enable = true;
     settings = {
       general = {
-        lock_cmd =
-          "pidof hyprlock || hyprlock"; # avoid starting multiple hyprlock instances.
-        before_sleep_cmd = "loginctl lock-session"; # lock before suspend.
-        after_sleep_cmd =
-          "hyprctl dispatch dpms on"; # to avoid having to press a key twice to turn on the display.
+        # avoid starting multiple hyprlock instances.
+        lock_cmd = "pidof ${lock} || ${lock}";
+        # lock before suspend.
+        before_sleep_cmd = lock;
+        # to avoid having to press a key twice to turn on the display.
+        after_sleep_cmd = display "on";
       };
 
       listener = [
         {
-          timeout = 300; # 2.5min.
+          timeout = 300; # 5min.
           on-timeout =
-            "brightnessctl -s set 10"; # set monitor backlight to minimum, avoid 0 on OLED monitor.
-          on-resume = "brightnessctl -r"; # monitor backlight restore.
+            "${brightnessctl} -s set 10"; # set monitor backlight to minimum, avoid 0 on OLED monitor.
+          on-resume = "${brightnessctl} -r"; # monitor backlight restore.
         }
 
         # turn off keyboard backlight, comment out this section if you dont have a keyboard backlight.
@@ -27,21 +36,20 @@
 
         {
           timeout = 600; # 10min
-          on-timeout =
-            "loginctl lock-session"; # lock screen when timeout has passed
+          on-timeout = lock; # lock screen when timeout has passed
         }
 
         {
           timeout = 630; # 10.5min
-          on-timeout =
-            "hyprctl dispatch dpms off"; # screen off when timeout has passed
-          on-resume =
-            "hyprctl dispatch dpms on"; # screen on when activity is detected after timeout has fired.
+          # screen off when timeout has passed
+          on-timeout = display "off";
+          # screen on when activity is detected after timeout has fired.
+          on-resume = display "on";
         }
 
         {
           timeout = 1800; # 30min
-          on-timeout = "systemctl suspend"; # suspend pc
+          on-timeout = "${pkgs.systemd}/bin/systemctl suspend"; # suspend pc
         }
       ];
 
