@@ -14,6 +14,7 @@
       jellyfin-mpv-shim
       wechat
       xorg.xprop
+      blueberry
     ])
     (with pkgs-unstable; [ ])
   ];
