@@ -6,7 +6,12 @@
     wayland = true;
   };
 
-  programs.niri.enable = true;
+  programs.niri = {
+    enable = true;
+    useNautilus = true;
+  };
+
+  services.gnome.sushi.enable = true;
 
   # For gnome software
   programs.dconf.enable = true;
@@ -14,6 +19,7 @@
   environment.systemPackages = with pkgs; [
     kitty
     nautilus
+    loupe
     pkgs.libheif
     pkgs.libheif.out
     pkgs.xdg-utils
