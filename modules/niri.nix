@@ -17,9 +17,9 @@
   programs.dconf.enable = true;
 
   environment.systemPackages = with pkgs; [
-    kitty
-    nautilus
-    loupe
+    kitty # Terminal
+    nautilus # File manager
+    loupe # Image viewer
     pkgs.libheif
     pkgs.libheif.out
     pkgs.xdg-utils

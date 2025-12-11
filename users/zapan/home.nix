@@ -98,6 +98,7 @@ in {
     # ../../modules/swaylock.nix
     ../../modules/hypridle.nix
     ../../modules/hyprlock.nix
+    ../../modules/clipboard.nix
     ../../modules/neovim.nix
   ];
 
