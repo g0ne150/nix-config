@@ -18,8 +18,6 @@
     pkgs.libheif.out
     pkgs.xdg-utils
     fuzzel
-    swaylock
-    swayidle
     mako
     xwayland-satellite
   ];
