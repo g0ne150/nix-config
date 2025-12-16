@@ -39,7 +39,8 @@ in {
   };
 
   xdg.configFile = let
-    dotfiles = "${config.home.homeDirectory}/nix-config/nix-dotfiles/dot_config";
+    dotfiles =
+      "${config.home.homeDirectory}/nix-config/nix-dotfiles/dot_config";
     create_symlink = path: config.lib.file.mkOutOfStoreSymlink path;
     configs = {
       niri = "niri";
@@ -89,7 +90,13 @@ in {
   };
 
   home.file.".local/share/fcitx5/rime/default.custom.yaml" = {
-    source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix-config/nix-dotfiles/dot_local/share/fcitx5/rime/default.custom.yaml";
+    source = config.lib.file.mkOutOfStoreSymlink
+      "${config.home.homeDirectory}/nix-config/nix-dotfiles/dot_local/share/fcitx5/rime/default.custom.yaml";
+  };
+
+  home.file.".m2/settings.xml" = {
+    source = config.lib.file.mkOutOfStoreSymlink
+      "${config.home.homeDirectory}/nix-config/nix-dotfiles/dot_m2/settings.xml";
   };
 
   imports = [

@@ -2,13 +2,13 @@
 
   environment.systemPackages = lib.mkMerge [
     (with pkgs; [
+      firefox
       brightnessctl
       polkit_gnome
       seahorse
       bitwarden-desktop
       qutebrowser
       evolution
-      tree-sitter
       statix
       mpv
       jellyfin-mpv-shim
