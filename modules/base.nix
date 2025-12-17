@@ -3,15 +3,6 @@
     experimental-features = [ "nix-command" "flakes" ];
 
     substituters = [ "https://mirrors.ustc.edu.cn/nix-channels/store" ];
-    trusted-users = [ "zapan" ];
-  };
-
-  users.users.zapan = {
-    isNormalUser = true;
-    extraGroups = [
-      "wheel"
-      "networkmanager"
-    ]; # wheel group for Enable ‘sudo’ for the user.
   };
 
   boot.kernelPackages = pkgs.linuxPackages_latest;

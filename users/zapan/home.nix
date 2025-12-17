@@ -107,6 +107,7 @@ in {
     ../../modules/hyprlock.nix
     ../../modules/clipboard.nix
     ../../modules/neovim.nix
+    ../../modules/rbw-ui.nix
   ];
 
   home.stateVersion = "25.11";
