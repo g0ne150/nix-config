@@ -19,5 +19,6 @@
     ../../modules/niri.nix
     ../../modules/podman.nix
     ../../modules/steam.nix
+    ../../modules/ydotool.nix
   ];
 }

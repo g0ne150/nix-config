@@ -1,5 +1,6 @@
 { pkgs, ... }: {
-  home.packages = with pkgs; [ dotool rofi-rbw-wayland ];
+  # ensure ./ydotool.nix is imported by nix, not home-manager
+  home.packages = with pkgs; [ rofi-rbw-wayland ];
   programs.rbw = {
     enable = true;
     settings = {
