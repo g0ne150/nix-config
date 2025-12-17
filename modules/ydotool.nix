@@ -1,6 +1,6 @@
 { ... }: {
   programs.ydotool = {
     enable = true;
-    # group = "ydotool";
+    # group = "ydotool"; # defualt value
   };
 }

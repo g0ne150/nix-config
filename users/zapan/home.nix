@@ -101,13 +101,12 @@ in {
 
   imports = [
     ./ssh-config.nix
-    # ../../modules/swayidle.nix
-    # ../../modules/swaylock.nix
     ../../modules/hypridle.nix
     ../../modules/hyprlock.nix
     ../../modules/clipboard.nix
     ../../modules/neovim.nix
     ../../modules/rbw-ui.nix
+    ../../modules/cursor.nix
   ];
 
   home.stateVersion = "25.11";
