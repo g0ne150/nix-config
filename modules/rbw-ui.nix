@@ -5,6 +5,7 @@
     settings = {
       base_url = "https://vaultwarden.zapan.club:10";
       email = "g0ne150@hotmail.com";
+      pinentry = pkgs.pinentry-gnome3;
     };
   };
 }
