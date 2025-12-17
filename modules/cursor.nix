@@ -3,6 +3,7 @@
     enable = true;
     gtk.enable = true;
     x11.enable = true;
-    package = pkgs.vanilla-dmz;
+    package = pkgs.adwaita-icon-theme;
+    name = "Adwaita";
   };
 }
