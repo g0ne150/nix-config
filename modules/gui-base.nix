@@ -8,14 +8,12 @@
       seahorse
       bitwarden-desktop
       qutebrowser
-      evolution
       statix
       mpv
       jellyfin-mpv-shim
       wechat
       xorg.xprop
       blueberry
-      gnome-text-editor
       gnome-font-viewer
     ])
     (with pkgs-unstable; [ ])
