@@ -8,7 +8,9 @@
 # `ls ~/.nix-profile/share/applications`
 
 { pkgs, ... }: {
-  environment.systemPackages = with pkgs; [
+  home.packages = with pkgs; [
+    gnome-calculator # Calculator
+
     qutebrowser
     nautilus
     evolution
