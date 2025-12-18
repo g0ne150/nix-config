@@ -10,6 +10,8 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
     gnome-calculator # Calculator
+    gnome-connections # RDP client
+    gnome-system-monitor
 
     qutebrowser
     nautilus
