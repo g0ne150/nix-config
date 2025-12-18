@@ -15,6 +15,8 @@
       wechat
       xorg.xprop
       blueberry
+      gnome-text-editor
+      gnome-font-viewer
     ])
     (with pkgs-unstable; [ ])
   ];
