@@ -10,6 +10,13 @@
     enable = true;
     useNautilus = true;
   };
+  environment.pathsToLink = [ "share/thumbnailers" ];
+  services.gvfs.enable = true;
+  services.udisks2.enable = true;
+  programs.nautilus-open-any-terminal = {
+    enable = true;
+    terminal = "kitty";
+  };
 
   services.gnome.sushi.enable = true;
 
@@ -31,13 +38,4 @@
 
   # For IME not working on Electron apps
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
-
-  environment.pathsToLink = [ "share/thumbnailers" ];
-  services.gvfs.enable = true;
-  services.udisks2.enable = true;
-  programs.nautilus-open-any-terminal = {
-    enable = true;
-    terminal = "kitty";
-  };
-
 }
