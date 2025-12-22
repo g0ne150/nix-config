@@ -9,6 +9,8 @@
 
 { pkgs, ... }: {
   home.packages = with pkgs; [
+    dialect # Translate between languages
+    baobab # Disk Usage Analyzer
     gnome-calculator # Calculator
     gnome-connections # RDP client
     gnome-system-monitor
