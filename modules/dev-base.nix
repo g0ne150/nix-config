@@ -2,7 +2,8 @@
 
   environment.systemPackages = with pkgs; [
     # java
-    jdk
+    javaPackages.compiler.openjdk21
+    javaPackages.compiler.openjdk8
     maven
 
     # nodejs
