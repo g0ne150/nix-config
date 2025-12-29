@@ -32,9 +32,10 @@
     fuzzel
     mako
     xwayland-satellite
+    waybar
   ];
 
-  programs.waybar.enable = true; # top bar
+  # programs.waybar.enable = true; # top bar
 
   # For IME not working on Electron apps
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
