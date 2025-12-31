@@ -1,22 +1,19 @@
-{ pkgs, pkgs-unstable, lib, ... }: {
+{ pkgs, lib, ... }: {
 
-  environment.systemPackages = lib.mkMerge [
-    (with pkgs; [
-      firefox
-      brightnessctl
-      polkit_gnome
-      seahorse
-      bitwarden-desktop
-      qutebrowser
-      statix
-      mpv
-      jellyfin-mpv-shim
-      wechat
-      xorg.xprop
-      blueberry
-      gnome-font-viewer
-    ])
-    (with pkgs-unstable; [ ])
+  environment.systemPackages = with pkgs; [
+    firefox
+    brightnessctl
+    polkit_gnome
+    seahorse
+    bitwarden-desktop
+    qutebrowser
+    statix
+    mpv
+    jellyfin-mpv-shim
+    wechat
+    xorg.xprop
+    blueberry
+    gnome-font-viewer
   ];
 
   services.hardware.bolt.enable = true;
@@ -31,7 +28,6 @@
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true; # if not already enabled
-    package = pkgs-unstable.pipewire;
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;

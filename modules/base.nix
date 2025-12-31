@@ -71,5 +71,7 @@
     python314
 
     tlrc
+
+    ragenix
   ];
 }

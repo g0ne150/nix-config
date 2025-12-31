@@ -13,11 +13,16 @@
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    agenix.url = "github:yaxitech/ragenix";
+    agenix.inputs.darwin.follows = "";
   };
-  outputs = { self, nixpkgs, home-manager, ... }: {
+  outputs = { self, nixpkgs, home-manager, agenix, ... }: {
     nixosConfigurations.zenbook = nixpkgs.lib.nixosSystem {
+      # specialArgs = { inherit agenix; };
       system = "x86_64-linux";
       modules = [
+        agenix.nixosModules.default
         ./hosts/desktop/zenbook
         home-manager.nixosModules.home-manager
         {
