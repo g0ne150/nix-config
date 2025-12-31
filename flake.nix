@@ -8,22 +8,15 @@
   };
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
-    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+    # nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, ... }: {
-    nixosConfigurations.zenbook = let system = "x86_64-linux";
-    in nixpkgs.lib.nixosSystem {
-      specialArgs = {
-        pkgs-unstable = import nixpkgs-unstable {
-          inherit system;
-          config.allowUnfree = true;
-        };
-      };
-      inherit system;
+  outputs = { self, nixpkgs, home-manager, ... }: {
+    nixosConfigurations.zenbook = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
       modules = [
         ./hosts/desktop/zenbook
         home-manager.nixosModules.home-manager
