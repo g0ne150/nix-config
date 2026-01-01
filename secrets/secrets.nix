@@ -5,4 +5,7 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFZBKgTiWIU358jlDvPB5qPf2i5szeVnLLGJrOy0WN0W root@zenbook";
 
   default = [ zapan zenbook ];
-in { "deepseek_api_key.age".publicKeys = default; }
+in {
+  "deepseek_api_key.age".publicKeys = default;
+  "context7_api_key.age".publicKeys = default;
+}
