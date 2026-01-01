@@ -13,6 +13,7 @@
   };
 
   imports = [
+    ../../secrets
     ../../modules/base.nix
     ../../modules/dev-base.nix
     ../../modules/gui-base.nix

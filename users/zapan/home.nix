@@ -99,6 +99,10 @@ in {
       "${config.home.homeDirectory}/nix-config/nix-dotfiles/dot_m2/settings.xml";
   };
 
+  home.sessionPath = [
+    "$HOME/.local/bin"
+  ];
+
   imports = [
     ./ssh-config.nix
     ../../modules/hypridle.nix
