@@ -25,14 +25,15 @@
         agenix.nixosModules.default
         ./hosts/desktop/zenbook
         home-manager.nixosModules.home-manager
-        {
+        ({ config, ... }: {
           home-manager = {
             useGlobalPkgs = true;
             useUserPackages = true;
             users.zapan = import ./users/zapan/home.nix;
             backupFileExtension = "backup";
+            extraSpecialArgs = { ageSecrets = config.age.secrets; };
           };
-        }
+        })
       ];
     };
 
