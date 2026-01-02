@@ -1,13 +1,11 @@
-{ pkgs, ageSecrets, ... }: {
+{ ageSecrets, ... }: {
   programs.claude-code = {
     enable = true;
     mcpServers = {
       context7 = {
         type = "http";
         url = "https://mcp.context7.com/mcp";
-        headers = {
-          CONTEXT7_API_KEY = "$CONTEXT7_API_KEY";
-        };
+        headers = { CONTEXT7_API_KEY = "$CONTEXT7_API_KEY"; };
       };
     };
   };
@@ -25,7 +23,7 @@
       export CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1
       export CONTEXT7_API_KEY="$(cat ${ageSecrets.context7_api_key.path})"
 
-      ${pkgs.claude-code}/bin/claude "$@"
+      exec claude "$@"
     '';
   };
 }
