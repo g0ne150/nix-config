@@ -1,4 +1,12 @@
-{ ageSecrets, ... }: {
+{ ageSecrets, ... }:
+let
+  common_script = ''
+    #!/bin/sh
+    set -eu
+    export CONTEXT7_API_KEY="$(cat ${ageSecrets.context7_api_key.path})"
+
+  '';
+in {
   programs.claude-code = {
     enable = true;
     mcpServers = {
@@ -12,10 +20,7 @@
 
   home.file.".local/bin/claude-deepseek" = {
     executable = true;
-    text = ''
-      #!/bin/sh
-      set -eu
-      export CONTEXT7_API_KEY="$(cat ${ageSecrets.context7_api_key.path})"
+    text = common_script + ''
       export ANTHROPIC_BASE_URL=https://api.deepseek.com/anthropic
       export ANTHROPIC_AUTH_TOKEN="$(cat ${ageSecrets.deepseek_api_key.path})"
       export API_TIMEOUT_MS=600000
@@ -28,10 +33,7 @@
   };
   home.file.".local/bin/claude-k2" = {
     executable = true;
-    text = ''
-      #!/bin/sh
-      set -eu
-      export CONTEXT7_API_KEY="$(cat ${ageSecrets.context7_api_key.path})"
+    text = common_script + ''
       export ANTHROPIC_BASE_URL=https://api.moonshot.cn/anthropic
       export ANTHROPIC_AUTH_TOKEN="$(cat ${ageSecrets.moonshot_api_key.path})"
       export ANTHROPIC_MODEL=kimi-k2-thinking
