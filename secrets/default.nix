@@ -12,6 +12,11 @@
         group = "users";
         mode = "440";
       };
+      moonshot_api_key = {
+        file = ./moonshot_api_key.age;
+        group = "users";
+        mode = "440";
+      };
     };
   };
 }
