@@ -49,6 +49,7 @@
     htop
     lm_sensors
     sysstat
+    file
 
     zip
     unzip

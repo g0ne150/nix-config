@@ -108,7 +108,7 @@ in {
     ../../modules/hypridle.nix
     ../../modules/hyprlock.nix
     ../../modules/clipboard.nix
-    ../../modules/neovim.nix
+    # ../../modules/neovim.nix
     ../../modules/rbw-ui.nix
     ../../modules/cursor.nix
     ../../modules/default-apps.nix

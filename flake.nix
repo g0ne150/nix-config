@@ -14,10 +14,18 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    agenix.url = "github:yaxitech/ragenix";
-    agenix.inputs.darwin.follows = "";
+    agenix = {
+      url = "github:yaxitech/ragenix";
+      inputs.darwin.follows = "";
+    };
+
+    nvf = {
+      url = "github:NotAShelf/nvf";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
   };
-  outputs = { self, nixpkgs, home-manager, agenix, ... }: {
+  outputs = { self, nixpkgs, home-manager, agenix, nvf, ... }: {
     nixosConfigurations.zenbook = nixpkgs.lib.nixosSystem {
       # specialArgs = { inherit agenix; };
       system = "x86_64-linux";
