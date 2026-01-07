@@ -39,7 +39,10 @@
             useUserPackages = true;
             users.zapan = import ./users/zapan/home.nix;
             backupFileExtension = "backup";
-            extraSpecialArgs = { ageSecrets = config.age.secrets; };
+            extraSpecialArgs = {
+              ageSecrets = config.age.secrets;
+              inherit nvf;
+            };
           };
         })
       ];
