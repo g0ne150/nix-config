@@ -1,6 +1,7 @@
 {pkgs, nvf, ...}:{
   imports = [
     nvf.homeManagerModules.default
+    ./bufferline.nix
   ];
 
   programs.nvf = {
@@ -11,6 +12,11 @@
         # 启用 vi/vim 别名
         viAlias = false;
         vimAlias = true;
+
+        globals = {
+          mapleader = " ";
+          maplocalleader = "\\";
+        };
 
         # 启用 LSP
         lsp = {
@@ -49,6 +55,7 @@
         #   enable = true;
         #   name = "tokyonight";
         # };
+
       };
     };
   };
