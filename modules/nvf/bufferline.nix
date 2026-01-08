@@ -4,7 +4,7 @@
       enable = true;
 
       mappings = {
-        pick = "<leander>bb";
+        pick = "<leader>bb";
         cyclePrevious = "<S-h>";
         cycleNext = "<S-l>";
         closeCurrent = "<leader>bd";

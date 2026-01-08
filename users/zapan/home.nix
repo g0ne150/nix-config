@@ -113,6 +113,7 @@ in {
     ../../modules/cursor.nix
     ../../modules/default-apps.nix
     ../../modules/claude-code.nix
+    ../../modules/gemini-cli.nix
   ];
 
   home.stateVersion = "25.11";
