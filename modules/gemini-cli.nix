@@ -1,5 +1,5 @@
 {...}: {
   programs.gemini-cli = {
-    enabled = true;
+    enable = true;
   };
 }

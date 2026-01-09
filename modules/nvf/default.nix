@@ -23,14 +23,8 @@
           enable = true;
         };
 
-        # 启用 Treesitter
-        treesitter = {
-          enable = true;
-          fold = true;
-        };
-
         languages = {
-          enableTreesitter = true;
+          # enableTreesitter = true;
           enableFormat = true;
 
         };
