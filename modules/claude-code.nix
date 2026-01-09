@@ -45,4 +45,15 @@ in {
       exec claude "$@"
     '';
   };
+  home.file.".local/bin/claude-glm" = {
+    executable = true;
+    text = common_script + ''
+      export ANTHROPIC_BASE_URL=https://open.bigmodel.cn/api/anthropic
+      export ANTHROPIC_AUTH_TOKEN="$(cat ${ageSecrets.bigmodule_api_key.path})"
+      export API_TIMEOUT_MS="3000000"
+      export CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1
+
+      exec claude "$@"
+    '';
+  };
 }

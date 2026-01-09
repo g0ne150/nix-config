@@ -9,4 +9,5 @@ in {
   "deepseek_api_key.age".publicKeys = default;
   "context7_api_key.age".publicKeys = default;
   "moonshot_api_key.age".publicKeys = default;
+  "bigmodel_api_key.age".publicKeys = default;
 }
