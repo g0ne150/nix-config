@@ -17,7 +17,7 @@
         group = "users";
         mode = "440";
       };
-      bigmodule_api_key = {
+      bigmodel_api_key = {
         file = ./bigmodel_api_key.age;
         group = "users";
         mode = "440";
