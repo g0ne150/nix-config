@@ -1,4 +1,4 @@
-{pkgs, nvf, ...}:{
+{ nvf, ...}:{
   imports = [
     nvf.homeManagerModules.default
     ./bufferline.nix
@@ -24,7 +24,7 @@
         };
 
         languages = {
-          # enableTreesitter = true;
+          enableTreesitter = true;
           enableFormat = true;
 
         };
