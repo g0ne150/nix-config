@@ -1,6 +1,9 @@
 { ... }:
 {
   programs.nvf.settings = {
+    vim.utility.motion.flash-nvim = {
+      enable = true;
+    };
     vim.utility.snacks-nvim = {
       enable = true;
       setupOpts = {
