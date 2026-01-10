@@ -401,6 +401,13 @@
       }
       # LSP
       {
+        key = "<leader>cl";
+        action = "function() Snacks.picker.lsp_config() end";
+        mode = "n";
+        lua = true;
+        desc = "Lsp Info";
+      }
+      {
         key = "gd";
         action = "function() Snacks.picker.lsp_definitions() end";
         mode = "n";
@@ -563,6 +570,20 @@
         ];
         lua = true;
         desc = "Prev Reference";
+      }
+      {
+        key = "<a-n>";
+        action = "function() Snacks.words.jump(vim.v.count1, true) end";
+        mode = "n";
+        lua = true;
+        desc = "Next Reference (Alt)";
+      }
+      {
+        key = "<a-p>";
+        action = "function() Snacks.words.jump(-vim.v.count1, true) end";
+        mode = "n";
+        lua = true;
+        desc = "Prev Reference (Alt)";
       }
     ];
   };
