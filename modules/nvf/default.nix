@@ -1,7 +1,14 @@
-{ nvf, ...}:{
+{ nvf, ... }:
+{
+  home.sessionVariables = {
+    EDITOR = "nvim";
+  };
+
   imports = [
     nvf.homeManagerModules.default
     ./bufferline.nix
+    ./languages.nix
+    ./snacks-nvim.nix
   ];
 
   programs.nvf = {
@@ -22,18 +29,6 @@
         lsp = {
           enable = true;
         };
-
-        languages = {
-          enableTreesitter = true;
-          enableFormat = true;
-
-        };
-
-        languages.nix = {
-          enable = true;
-        };
-
-        utility.snacks-nvim.enable = true;
 
         binds.whichKey = {
           enable = true;
