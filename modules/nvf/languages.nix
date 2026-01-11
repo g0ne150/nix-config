@@ -1,23 +1,19 @@
 { ... }:
 {
   programs.nvf.settings = {
-
     vim.languages = {
+
       enableTreesitter = true;
       enableFormat = true;
 
-    };
+      bash.enable = true;
+      nix.enable = true;
+      markdown.enable = true;
+      lua.enable = true;
+      json.enable = true;
+      yaml.enable = true;
+      java.enable = true;
 
-    vim.languages.nix = {
-      enable = true;
-    };
-
-    vim.languages.markdown = {
-      enable = true;
-    };
-
-    vim.languages.lua = {
-      enable = true;
     };
 
     vim.keymaps = [
@@ -76,6 +72,16 @@
         mode = "n";
         lua = true;
         desc = "Rename";
+      }
+      {
+        key = "<leader>cf";
+        action = "vim.lsp.buf.format";
+        mode = [
+          "n"
+          "x"
+        ];
+        lua = true;
+        desc = "Format";
       }
     ];
   };
