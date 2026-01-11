@@ -4,6 +4,7 @@
     vim.utility.motion.flash-nvim = {
       enable = true;
     };
+
     vim.utility.snacks-nvim = {
       enable = true;
       setupOpts = {
@@ -584,6 +585,13 @@
         mode = "n";
         lua = true;
         desc = "Prev Reference (Alt)";
+      }
+      {
+        key = "<c-space>";
+        action = "function() require('flash').treesitter({actions = {['<c-space>'] = 'next', ['<BS>'] = 'prev'}}) end";
+        mode = [ "n" "o" "x" ];
+        lua = true;
+        desc = "Treesitter Incremental Selection";
       }
     ];
   };

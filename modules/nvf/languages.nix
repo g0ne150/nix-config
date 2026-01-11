@@ -16,6 +16,10 @@
       enable = true;
     };
 
+    vim.languages.lua = {
+      enable = true;
+    };
+
     vim.keymaps = [
       # LSP native keymaps (not Snacks-specific)
       {
