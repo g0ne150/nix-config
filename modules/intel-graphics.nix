@@ -4,6 +4,7 @@
 
   hardware.graphics = {
     enable = true;
+    enable32Bit = true; # Required for Steam (32-bit games)
     extraPackages = with pkgs; [
       # Required for modern Intel GPUs (Xe iGPU and ARC)
       intel-media-driver # VA-API (iHD) userspace

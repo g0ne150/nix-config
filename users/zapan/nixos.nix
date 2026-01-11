@@ -9,7 +9,9 @@
       "wheel"
       "networkmanager"
       "ydotool"
-    ]; # wheel group for Enable ‘sudo’ for the user.
+      "video"  # Required for GPU access (Steam, games, video acceleration)
+      "render" # Required for GPU rendering (Steam, games, hardware acceleration)
+    ]; # wheel group for Enable 'sudo' for the user.
   };
 
   imports = [
