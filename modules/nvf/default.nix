@@ -9,6 +9,7 @@
     ./bufferline.nix
     ./languages.nix
     ./snacks-nvim.nix
+    ./blink-cmp.nix
   ];
 
   programs.nvf = {

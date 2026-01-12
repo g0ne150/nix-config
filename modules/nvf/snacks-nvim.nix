@@ -8,9 +8,7 @@
     vim.utility.snacks-nvim = {
       enable = true;
       setupOpts = {
-        bigfile = {
-          enabled = true;
-        };
+        bigfile.enabled = true;
         dashboard = {
           enabled = true;
           sections = [
@@ -22,42 +20,23 @@
             }
           ];
         };
-        explorer = {
-          enabled = true;
-        };
-        indent = {
-          enabled = true;
-        };
-        input = {
-          enabled = true;
-        };
+        explorer.enabled = true;
+        indent.enabled = true;
+        input.enabled = true;
         notifier = {
           enabled = true;
           timeout = 3000;
         };
-        picker = {
-          enabled = true;
+        picker.enabled = true;
+        quickfile.enabled = true;
+        scope.enabled = true;
+        scroll.enabled = true;
+        statuscolumn.enabled = true;
+        words.enabled = true;
+        styles.notification = {
+          #  wo = { wrap = true; }; -- Wrap notifications
         };
-        quickfile = {
-          enabled = true;
-        };
-        scope = {
-          enabled = true;
-        };
-        scroll = {
-          enabled = true;
-        };
-        statuscolumn = {
-          enabled = true;
-        };
-        words = {
-          enabled = true;
-        };
-        styles = {
-          notification = {
-            #  wo = { wrap = true; }; -- Wrap notifications
-          };
-        };
+
       };
     };
 
@@ -589,7 +568,11 @@
       {
         key = "<c-space>";
         action = "function() require('flash').treesitter({actions = {['<c-space>'] = 'next', ['<BS>'] = 'prev'}}) end";
-        mode = [ "n" "o" "x" ];
+        mode = [
+          "n"
+          "o"
+          "x"
+        ];
         lua = true;
         desc = "Treesitter Incremental Selection";
       }
