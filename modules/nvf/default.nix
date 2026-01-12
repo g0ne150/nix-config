@@ -33,6 +33,7 @@
 
         binds.whichKey = {
           enable = true;
+          setupOpts.preset = "helix";
         };
 
         # 启用 Git 集成
