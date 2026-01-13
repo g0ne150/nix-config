@@ -6,6 +6,7 @@
 
   imports = [
     nvf.homeManagerModules.default
+    ./options.nix
     ./bufferline.nix
     ./languages.nix
     ./snacks-nvim.nix
@@ -26,11 +27,6 @@
           maplocalleader = "\\";
         };
 
-        # 启用 LSP
-        lsp = {
-          enable = true;
-        };
-
         binds.whichKey = {
           enable = true;
           setupOpts.preset = "helix";
@@ -40,6 +36,8 @@
         git = {
           enable = true;
         };
+
+        ui.noice.enable = true;
 
         # 主题配置（可选）
         # theme = {
