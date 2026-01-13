@@ -2,7 +2,7 @@
 {
   programs.nvf.settings = {
     vim.options = {
-      cmdHeight = 0;
+      cmdheight = 0;
     };
   };
 }
