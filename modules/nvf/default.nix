@@ -38,6 +38,7 @@
         };
 
         ui.noice.enable = true;
+        # FIXME no macro recording status
         statusline.lualine.enable = true;
 
         # 主题配置（可选）
