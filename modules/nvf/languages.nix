@@ -1,6 +1,7 @@
 { ... }:
 {
   programs.nvf.settings = {
+    vim.treesitter.fold = true;
     vim.lsp.enable = true;
 
     vim.languages = {
