@@ -40,11 +40,11 @@
 
         ui.noice.enable = true;
 
-        # 主题配置（可选）
-        # theme = {
-        #   enable = true;
-        #   name = "tokyonight";
-        # };
+        theme = {
+          enable = true;
+          name = "catppuccin";
+          style = "macchiato";
+        };
 
       };
     };
