@@ -1,7 +1,6 @@
 { ... }:
 {
   programs.nvf.settings = {
-    # FIXME no macro recording status
     vim.statusline.lualine = {
       enable = true;
       activeSection = {
@@ -28,7 +27,7 @@
         ];
 
         x = [
-          ''require('snacks').profiler.status()''
+          "require('snacks').profiler.status()"
           ''
             {
               function() return require("noice").api.status.command.get() end,
