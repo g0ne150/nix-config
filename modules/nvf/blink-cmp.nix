@@ -4,6 +4,9 @@
     vim.autocomplete.blink-cmp = {
       enable = true;
       friendly-snippets.enable = true;
+      setupOpts = {
+        signature.enabled = true;
+      };
 
       # 快捷键映射（默认值）
       # mappings = {

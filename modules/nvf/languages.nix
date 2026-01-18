@@ -2,7 +2,11 @@
 {
   programs.nvf.settings = {
     vim.treesitter.fold = true;
-    vim.lsp.enable = true;
+    vim.lsp = {
+      enable = true;
+      formatOnSave = false;
+      inlayHints.enable = true;
+    };
 
     vim.languages = {
 
