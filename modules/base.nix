@@ -50,6 +50,7 @@
     lm_sensors
     sysstat
     file
+    lsof
 
     zip
     unzip

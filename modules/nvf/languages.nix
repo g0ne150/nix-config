@@ -1,11 +1,16 @@
-{ ... }:
+{ pkgs, ... }:
 {
+  home.packages = with pkgs; [ lombok ];
+  home.sessionVariables = {
+    JDTLS_JVM_ARGS = "-javaagent:${pkgs.lombok}/share/java/lombok.jar";
+  };
   programs.nvf.settings = {
     vim.treesitter.fold = true;
     vim.lsp = {
       enable = true;
       formatOnSave = false;
       inlayHints.enable = true;
+      lspconfig.enable = true;
     };
 
     vim.languages = {

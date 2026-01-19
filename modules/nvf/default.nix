@@ -38,7 +38,10 @@
           enable = true;
         };
 
-        ui.noice.enable = true;
+        ui.noice = {
+          enable = true;
+          setupOpts.lsp.signature.enabled = true;
+        };
 
         theme = {
           enable = true;
