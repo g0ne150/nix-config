@@ -520,7 +520,10 @@
       {
         key = "<c-/>";
         action = "function() Snacks.terminal() end";
-        mode = "n";
+        mode = [
+          "n"
+          "t"
+        ];
         lua = true;
         desc = "Toggle Terminal";
       }
