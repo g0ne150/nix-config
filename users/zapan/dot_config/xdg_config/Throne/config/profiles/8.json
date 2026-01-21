@@ -1,0 +1,40 @@
+{
+    "bean": {
+        "_v": 0,
+        "addr": "cloudcone.zapan.club",
+        "allowInsecure": false,
+        "alpn": "",
+        "authPayload": "",
+        "brutal_speed": 0,
+        "c_cfg": "",
+        "c_out": "",
+        "caText": "",
+        "connectionReceiveWindow": 0,
+        "disableMtuDiscovery": false,
+        "disableSni": false,
+        "downloadMbps": 0,
+        "enable_brutal": false,
+        "forceExternal": false,
+        "hop_interval": "",
+        "mux": 0,
+        "name": "cloudcone hy2",
+        "obfsPassword": "",
+        "password": "z9YbGTL5fVJcvmiFhk9z",
+        "port": 443,
+        "sni": "",
+        "streamReceiveWindow": 0,
+        "uploadMbps": 0
+    },
+    "country": "",
+    "dl": "",
+    "gid": 0,
+    "id": 8,
+    "report": "",
+    "traffic": {
+        "dl": 2331003462,
+        "ul": 94327289
+    },
+    "type": "hysteria2",
+    "ul": "",
+    "yc": 274
+}

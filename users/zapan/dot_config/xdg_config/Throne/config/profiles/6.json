@@ -1,0 +1,40 @@
+{
+    "bean": {
+        "_v": 0,
+        "addr": "bwg2.zapan.club",
+        "allowInsecure": true,
+        "alpn": "",
+        "authPayload": "",
+        "brutal_speed": 0,
+        "c_cfg": "",
+        "c_out": "",
+        "caText": "",
+        "connectionReceiveWindow": 0,
+        "disableMtuDiscovery": false,
+        "disableSni": false,
+        "downloadMbps": 0,
+        "enable_brutal": false,
+        "forceExternal": false,
+        "hop_interval": "",
+        "mux": 0,
+        "name": "bwg2.zapan.club Hysteria2",
+        "obfsPassword": "gPBuWWolunlLojf8fPbwDjX",
+        "password": "50e883b6-f882-4ee2-b831-6be41b418fe6",
+        "port": 15022,
+        "sni": "bwg2.zapan.club",
+        "streamReceiveWindow": 0,
+        "uploadMbps": 0
+    },
+    "country": "",
+    "dl": "",
+    "gid": 1,
+    "id": 6,
+    "report": "",
+    "traffic": {
+        "dl": 4002321887,
+        "ul": 129084304
+    },
+    "type": "hysteria2",
+    "ul": "",
+    "yc": -1
+}
