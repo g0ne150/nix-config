@@ -1,13 +1,6 @@
-{
-  config,
-  pkgs,
-  home-manager,
-  ...
-}:
-let
-  username = "zapan";
-in
-{
+{ config, pkgs, home-manager, ... }:
+let username = "zapan";
+in {
   home = {
     inherit username;
     homeDirectory = "/home/zapan";
@@ -34,37 +27,36 @@ in
       Wants = [ "graphical-session.target" ];
       After = [ "graphical-session.target" ];
     };
-    Install = {
-      WantedBy = [ "graphical-session.target" ];
-    };
+    Install = { WantedBy = [ "graphical-session.target" ]; };
     Service = {
       Type = "simple";
-      ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+      ExecStart =
+        "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
       Restart = "on-failure";
       RestartSec = 1;
       TimeoutStopSec = 10;
     };
   };
 
-  xdg.configFile =
-    let
-      dotfiles = ./dot_config/xdg_config;
-      configs = {
-        niri = "niri";
-        waybar = "waybar";
-        fcitx = "fcitx";
-        fcitx5 = "fcitx5";
-        qutebrowser = "qutebrowser";
-        Throne = "Throne";
-        mako = "mako";
-        kitty = "kitty";
-        fuzzel = "fuzzel";
-      };
-    in
-    builtins.mapAttrs (name: subpath: {
-      source = "${dotfiles}/${subpath}";
-      recursive = true;
-    }) configs;
+  xdg.configFile = let
+    dotfiles =
+      "${config.home.homeDirectory}/nix-config/nix-dotfiles/dot_config";
+    create_symlink = path: config.lib.file.mkOutOfStoreSymlink path;
+    configs = {
+      niri = "niri";
+      waybar = "waybar";
+      fcitx = "fcitx";
+      fcitx5 = "fcitx5";
+      qutebrowser = "qutebrowser";
+      Throne = "Throne";
+      mako = "mako";
+      kitty = "kitty";
+      fuzzel = "fuzzel";
+    };
+  in builtins.mapAttrs (name: subpath: {
+    source = create_symlink "${dotfiles}/${subpath}";
+    recursive = true;
+  }) configs;
 
   gtk = {
     enable = true;
@@ -98,15 +90,13 @@ in
   };
 
   home.file.".local/share/fcitx5/rime/default.custom.yaml" = {
-    source = ./dot_config/.local/share/fcitx5/rime/default.custom.yaml;
+    source = config.lib.file.mkOutOfStoreSymlink
+      "${config.home.homeDirectory}/nix-config/nix-dotfiles/dot_local/share/fcitx5/rime/default.custom.yaml";
   };
 
   home.file.".m2/settings.xml" = {
-    source = ./dot_config/.m2/settings.xml;
-  };
-
-  home.file.".npmrc" = {
-    source = ./dot_config/.npmrc;
+    source = config.lib.file.mkOutOfStoreSymlink
+      "${config.home.homeDirectory}/nix-config/nix-dotfiles/dot_m2/settings.xml";
   };
 
   home.sessionPath = [
