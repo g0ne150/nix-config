@@ -8,6 +8,7 @@
 
     # nodejs
     nodejs
+    pnpm
 
     lua
 
@@ -15,5 +16,8 @@
 
     rustc
     cargo
+    rustup
+
+    just
   ];
 }

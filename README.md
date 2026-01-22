@@ -5,6 +5,12 @@
 1. `nixos-install --flake .#hostname` 初次安装系统
 1. `nixos-rebuild switch --flake .#hostname` 应用配置文件
 1. `nix flake update` 更新 flake.lock
+1. `nix search xx` 搜索 nix pkgs
+1. `nix develop` 按照当前目录下 flake.nix 准备一个 shell 环境
+1. `nix repl .#` 加载当前 flake 进入 repl
+  - `nixosConfigurations.zenbook.config` config 变量
+  - `nixosConfigurations.zenbook.config.home-manager.users.zapan` home-manager 变量。
+
 
 ### 清理
 
