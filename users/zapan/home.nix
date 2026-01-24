@@ -75,6 +75,22 @@ in
     };
   };
 
+  home.file.".local/share/fcitx5/rime/default.custom.yaml" = {
+    source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix-config/nix-dotfiles/dot_local/share/fcitx5/rime/default.custom.yaml";
+  };
+
+  home.file.".m2/settings.xml" = {
+    source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix-config/nix-dotfiles/dot_m2/settings.xml";
+  };
+
+  home.file.".npmrc" = {
+    source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix-config/nix-dotfiles/private_dot_npmrc";
+  };
+
+  home.sessionPath = [
+    "$HOME/.local/bin"
+  ];
+
   programs = {
     git = {
       enable = true;
@@ -97,22 +113,6 @@ in
       enableBashIntegration = true;
     };
   };
-
-  home.file.".local/share/fcitx5/rime/default.custom.yaml" = {
-    source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix-config/nix-dotfiles/dot_local/share/fcitx5/rime/default.custom.yaml";
-  };
-
-  home.file.".m2/settings.xml" = {
-    source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix-config/nix-dotfiles/dot_m2/settings.xml";
-  };
-
-  home.file.".npmrc" = {
-    source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix-config/nix-dotfiles/private_dot_npmrc";
-  };
-
-  home.sessionPath = [
-    "$HOME/.local/bin"
-  ];
 
   imports = [
     ./ssh-config.nix
