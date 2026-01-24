@@ -10,7 +10,8 @@
 1. `nix repl .#` 加载当前 flake 进入 repl
   - `nixosConfigurations.zenbook.config` config 变量
   - `nixosConfigurations.zenbook.config.home-manager.users.zapan` home-manager 变量。
-
+1. `nix eval` 输出解析值
+  - 例如：`nix eval .#nixosConfigurations.zenbook.config.fileSystems."/nix".options`
 
 ### 清理
 

@@ -1,10 +1,17 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
-  imports = [ # Include the results of the hardware scan.
+  imports = [
+    # Include the results of the hardware scan.
     ../../../users/zapan/nixos.nix
     ../../../modules/battery.nix
     ../../../modules/intel-graphics.nix
+    ./mount-opts.nix
     ./hardware-configuration.nix
   ];
 
