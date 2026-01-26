@@ -3,19 +3,19 @@ let
   common_script = ''
     #!/bin/sh
     set -eu
-    export CONTEXT7_API_KEY="$(cat ${ageSecrets.context7_api_key.path})"
+    # export CONTEXT7_API_KEY="$(cat ${ageSecrets.context7_api_key.path})"
 
   '';
 in {
   programs.claude-code = {
     enable = true;
-    mcpServers = {
-      context7 = {
-        type = "http";
-        url = "https://mcp.context7.com/mcp";
-        headers = { CONTEXT7_API_KEY = "\${CONTEXT7_API_KEY}"; };
-      };
-    };
+    # mcpServers = {
+    #   context7 = {
+    #     type = "http";
+    #     url = "https://mcp.context7.com/mcp";
+    #     headers = { CONTEXT7_API_KEY = "\${CONTEXT7_API_KEY}"; };
+    #   };
+    # };
   };
 
   home.file.".local/bin/claude-deepseek" = {
