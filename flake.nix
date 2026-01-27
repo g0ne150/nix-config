@@ -25,43 +25,62 @@
     };
 
   };
-  outputs = { self, nixpkgs, home-manager, agenix, nvf, ... }: {
-    nixosConfigurations.zenbook = nixpkgs.lib.nixosSystem {
-      # specialArgs = { inherit agenix; };
-      system = "x86_64-linux";
-      modules = [
-        agenix.nixosModules.default
-        ./hosts/desktop/zenbook
-        home-manager.nixosModules.home-manager
-        ({ config, ... }: {
-          home-manager = {
-            useGlobalPkgs = true;
-            useUserPackages = true;
-            users.zapan = import ./users/zapan/home.nix;
-            backupFileExtension = "backup";
-            extraSpecialArgs = {
-              ageSecrets = config.age.secrets;
-              inherit nvf;
-            };
-          };
-        })
-      ];
-    };
+  outputs =
+    {
+      self,
+      nixpkgs,
+      home-manager,
+      agenix,
+      nvf,
+      ...
+    }:
+    {
+      nixosConfigurations.zenbook = nixpkgs.lib.nixosSystem {
+        # specialArgs = { inherit agenix; };
+        system = "x86_64-linux";
+        modules = [
+          agenix.nixosModules.default
+          ./hosts/desktop/zenbook
+          home-manager.nixosModules.home-manager
+          (
+            { config, ... }:
+            {
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                users.zapan = import ./users/zapan/home.nix;
+                backupFileExtension = "backup";
+                extraSpecialArgs = {
+                  ageSecrets = config.age.secrets;
+                  inherit nvf;
+                };
+              };
+            }
+          )
+        ];
+      };
 
-    nixosConfigurations.nixos-vm = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      modules = [
-        ./hosts/desktop/nixos-vm
-        home-manager.nixosModules.home-manager
-        {
-          home-manager = {
-            useGlobalPkgs = true;
-            useUserPackages = true;
-            users.zapan = import ./users/zapan/home.nix;
-            backupFileExtension = "backup";
-          };
-        }
-      ];
+      nixosConfigurations.clawdbot = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./hosts/server/clawdbot
+        ];
+      };
+
+      nixosConfigurations.nixos-vm = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./hosts/desktop/nixos-vm
+          home-manager.nixosModules.home-manager
+          {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              users.zapan = import ./users/zapan/home.nix;
+              backupFileExtension = "backup";
+            };
+          }
+        ];
+      };
     };
-  };
 }

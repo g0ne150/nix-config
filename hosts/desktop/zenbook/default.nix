@@ -8,11 +8,19 @@
 {
   imports = [
     # Include the results of the hardware scan.
-    ../../../users/zapan/nixos.nix
     ../../../modules/battery.nix
     ../../../modules/intel-graphics.nix
     ./mount-opts.nix
     ./hardware-configuration.nix
+
+    ../../../secrets
+    ../../../modules/base.nix
+    ../../../modules/dev-base.nix
+    ../../../modules/gui-base.nix
+    ../../../modules/niri.nix
+    ../../../modules/podman.nix
+    ../../../modules/steam.nix
+    ../../../modules/ydotool.nix
   ];
 
   # Use the systemd-boot EFI boot loader.
@@ -29,6 +37,18 @@
 
   networking.hostName = "zenbook"; # Define your hostname.
 
+  nix.settings = {
+    trusted-users = [ "zapan" ];
+  };
+
+  users.users.zapan = {
+    isNormalUser = true;
+    extraGroups = [
+      "wheel" # wheel group for Enable 'sudo' for the user.
+      "networkmanager"
+      "ydotool"
+    ];
+  };
   # services.openssh.enable = true;
 
   # List packages installed in system profile.
