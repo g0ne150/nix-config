@@ -6,7 +6,8 @@ let
     # export CONTEXT7_API_KEY="$(cat ${ageSecrets.context7_api_key.path})"
 
   '';
-in {
+in
+{
   programs.claude-code = {
     enable = true;
     # mcpServers = {
@@ -36,11 +37,11 @@ in {
     text = common_script + ''
       export ANTHROPIC_BASE_URL=https://api.moonshot.cn/anthropic
       export ANTHROPIC_AUTH_TOKEN="$(cat ${ageSecrets.moonshot_api_key.path})"
-      export ANTHROPIC_MODEL=kimi-k2-thinking
-      export ANTHROPIC_DEFAULT_OPUS_MODEL=kimi-k2-thinking
-      export ANTHROPIC_DEFAULT_SONNET_MODEL=kimi-k2-thinking
-      export ANTHROPIC_DEFAULT_HAIKU_MODEL=kimi-k2-thinking
-      export CLAUDE_CODE_SUBAGENT_MODEL=kimi-k2-thinking
+      export ANTHROPIC_MODEL=kimi-k2-thinking-turbo
+      export ANTHROPIC_DEFAULT_OPUS_MODEL=kimi-k2-thinking-turbo
+      export ANTHROPIC_DEFAULT_SONNET_MODEL=kimi-k2-thinking-turbo
+      export ANTHROPIC_DEFAULT_HAIKU_MODEL=kimi-k2-thinking-turbo
+      export CLAUDE_CODE_SUBAGENT_MODEL=kimi-k2-thinking-turbo
 
       exec claude "$@"
     '';
