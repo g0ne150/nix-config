@@ -67,20 +67,5 @@
         ];
       };
 
-      nixosConfigurations.nixos-vm = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [
-          ./hosts/desktop/nixos-vm
-          home-manager.nixosModules.home-manager
-          {
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              users.zapan = import ./users/zapan/home.nix;
-              backupFileExtension = "backup";
-            };
-          }
-        ];
-      };
     };
 }
