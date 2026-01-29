@@ -87,6 +87,10 @@ in
     source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix-config/nix-dotfiles/private_dot_npmrc";
   };
 
+  home.file."~/Pictures/wallpapers" = {
+    source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix-config/nix-dotfiles/Pictures/wallpapers";
+  };
+
   home.sessionPath = [
     "$HOME/.local/bin"
   ];
