@@ -33,6 +33,7 @@
     mako
     xwayland-satellite
     waybar
+    swaybg
   ];
 
   # programs.waybar.enable = true; # top bar
