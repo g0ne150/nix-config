@@ -32,16 +32,16 @@ in
       exec claude "$@"
     '';
   };
-  home.file.".local/bin/claude-k2" = {
+  home.file.".local/bin/claude-kimi" = {
     executable = true;
     text = common_script + ''
       export ANTHROPIC_BASE_URL=https://api.moonshot.cn/anthropic
       export ANTHROPIC_AUTH_TOKEN="$(cat ${ageSecrets.moonshot_api_key.path})"
-      export ANTHROPIC_MODEL=kimi-k2-thinking-turbo
-      export ANTHROPIC_DEFAULT_OPUS_MODEL=kimi-k2-thinking-turbo
-      export ANTHROPIC_DEFAULT_SONNET_MODEL=kimi-k2-thinking-turbo
-      export ANTHROPIC_DEFAULT_HAIKU_MODEL=kimi-k2-thinking-turbo
-      export CLAUDE_CODE_SUBAGENT_MODEL=kimi-k2-thinking-turbo
+      export ANTHROPIC_MODEL=kimi-k2.5
+      export ANTHROPIC_DEFAULT_OPUS_MODEL=kimi-k2.5
+      export ANTHROPIC_DEFAULT_SONNET_MODEL=kimi-k2.5
+      export ANTHROPIC_DEFAULT_HAIKU_MODEL=kimi-k2.5
+      export CLAUDE_CODE_SUBAGENT_MODEL=kimi-k2.5
 
       exec claude "$@"
     '';
