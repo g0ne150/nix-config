@@ -123,6 +123,7 @@ in
     ../../modules/hypridle.nix
     ../../modules/hyprlock.nix
     ../../modules/clipboard.nix
+    ../../modules/nodejs.nix
     ../../modules/nvf
     ../../modules/rbw-ui.nix
     ../../modules/cursor.nix

@@ -19,6 +19,7 @@
       enableFormat = true;
 
       bash.enable = true;
+      python.enable = true;
       nix.enable = true;
       markdown.enable = true;
       lua.enable = true;
