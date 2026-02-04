@@ -1,4 +1,4 @@
-{ ageSecrets, ... }:
+{ ageSecrets, config, ... }:
 let
   common_script = ''
     #!/bin/sh
@@ -8,6 +8,9 @@ let
   '';
 in
 {
+  home.file.".claude/CLAUDE.md" = {
+    source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix-config/nix-dotfiles/dot_claude/CLAUDE.md";
+  };
   programs.claude-code = {
     enable = true;
     # mcpServers = {
