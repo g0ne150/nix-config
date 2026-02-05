@@ -1,8 +1,14 @@
-{ ageSecrets, config, ... }:
+{
+  ageSecrets,
+  config,
+  pkgs,
+  ...
+}:
 let
   common_script = ''
-    #!/bin/sh
+    #!${pkgs.bash}/bin/bash
     set -eu
+    export {all,http,https}_proxy=http://127.0.0.1:1080;
     export BRAVE_SEARCH_API_KEY="$(cat ${ageSecrets.brave_search_api_key.path})"
 
   '';
