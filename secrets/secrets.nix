@@ -17,4 +17,5 @@ in
   "context7_api_key.age".publicKeys = default;
   "moonshot_api_key.age".publicKeys = default;
   "bigmodel_api_key.age".publicKeys = default;
+  "brave_search_api_key.age".publicKeys = default;
 }

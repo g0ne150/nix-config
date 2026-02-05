@@ -16,4 +16,8 @@ in
     PNPM_HOME = pnpm_home;
   };
 
+  programs.bash.shellAliases = {
+    npx = "pnpm dlx";
+  };
+
 }

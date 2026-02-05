@@ -128,7 +128,7 @@ in
     ../../modules/rbw-ui.nix
     ../../modules/cursor.nix
     ../../modules/default-apps.nix
-    ../../modules/claude-code.nix
+    ../../modules/claude-code
   ];
 
   home.stateVersion = "25.05";
