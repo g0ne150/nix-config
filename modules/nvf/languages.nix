@@ -21,7 +21,6 @@
       bash.enable = true;
       python.enable = true;
       nix.enable = true;
-      markdown.enable = true;
       lua.enable = true;
       json.enable = true;
       yaml.enable = true;

@@ -9,6 +9,7 @@
     ./options.nix
     ./bufferline.nix
     ./languages.nix
+    ./markdown.nix
     ./snacks-nvim.nix
     ./blink-cmp.nix
     ./lualine.nix
