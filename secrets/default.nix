@@ -46,6 +46,11 @@
         group = "users";
         mode = "440";
       };
+      kimi_api_key = {
+        file = ./kimi_api_key.age;
+        group = "users";
+        mode = "440";
+      };
       bigmodel_api_key = {
         file = ./bigmodel_api_key.age;
         group = "users";
