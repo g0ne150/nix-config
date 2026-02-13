@@ -25,6 +25,7 @@
       json.enable = true;
       yaml.enable = true;
       java.enable = true;
+      go.enable = true;
 
     };
 
