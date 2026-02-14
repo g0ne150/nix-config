@@ -20,5 +20,7 @@
 
     just
     gnumake
+
+    sqlite
   ];
 }
