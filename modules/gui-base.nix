@@ -1,4 +1,5 @@
-{ pkgs, lib, ... }: {
+{ pkgs, lib, ... }:
+{
 
   environment.systemPackages = with pkgs; [
     firefox
@@ -14,6 +15,7 @@
     xorg.xprop
     blueberry
     gnome-font-viewer
+    telegram-desktop
   ];
 
   services.hardware.bolt.enable = true;
