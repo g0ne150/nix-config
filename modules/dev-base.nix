@@ -10,6 +10,8 @@
     nodejs
     pnpm
 
+    bun
+
     lua
 
     go
