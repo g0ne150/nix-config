@@ -26,6 +26,9 @@
       yaml.enable = true;
       java.enable = true;
       go.enable = true;
+      html.enable = true;
+      css.enable = true;
+      ts.enable = true;
 
     };
 
