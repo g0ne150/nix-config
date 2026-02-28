@@ -4,6 +4,12 @@
     enable = true;
     # enableDefaultConfig = false;
     matchBlocks = {
+      "zeroclaw" = {
+        hostname = "10.0.10.18";
+        user = "zapan";
+        identityFile = "~/.ssh/general";
+        proxyJump = "kube-worker1.home";
+      };
       "github.com" = {
         hostname = "ssh.github.com";
         proxyCommand = "nc -X 5 -x 127.0.0.1:1080 %h %p";
