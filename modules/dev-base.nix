@@ -18,7 +18,6 @@
 
     rustc
     cargo
-    rustup
 
     just
     gnumake
