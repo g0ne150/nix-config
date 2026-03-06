@@ -5,7 +5,7 @@
   ];
 
   networking.wireguard = {
-    enable = true;
+    enable = false;
     interfaces = {
       wg0 = {
         ips = [ "10.1.0.2/32" ];
