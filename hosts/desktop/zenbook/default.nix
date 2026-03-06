@@ -12,6 +12,7 @@
     ../../../modules/intel-graphics.nix
     ./mount-opts.nix
     ./hardware-configuration.nix
+    ./wireguard.nix
 
     ../../../secrets
     ../../../modules/base.nix

@@ -19,4 +19,5 @@ in
   "kimi_api_key.age".publicKeys = default;
   "bigmodel_api_key.age".publicKeys = default;
   "brave_search_api_key.age".publicKeys = default;
+  "zenbook_wg_private_key.age".publicKeys = default;
 }

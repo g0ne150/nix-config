@@ -3,6 +3,9 @@
   age = {
     identityPaths = [ "/var/lib/agenix/zenbook" ];
     secrets = {
+      zenbook_wg_private_key = {
+        file = ./zenbook_wg_private_key.age;
+      };
       ssh_key_general = {
         file = ./ssh_key_general.age;
         path = "/home/zapan/.ssh/general";
