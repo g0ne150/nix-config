@@ -12,7 +12,8 @@
     mpv
     jellyfin-mpv-shim
     wechat
-    xorg.xprop
+    # xorg.xprop
+    xprop
     blueberry
     gnome-font-viewer
     telegram-desktop
