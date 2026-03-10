@@ -16,6 +16,8 @@
     blueberry
     gnome-font-viewer
     telegram-desktop
+    libreoffice-fresh
+    drawio
   ];
 
   services.hardware.bolt.enable = true;
