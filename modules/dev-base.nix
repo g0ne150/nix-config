@@ -19,6 +19,8 @@
     rustc
     cargo
 
+    zig
+
     just
     gnumake
 

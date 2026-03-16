@@ -14,7 +14,6 @@
     wechat
     # xorg.xprop
     xprop
-    blueberry
     gnome-font-viewer
     telegram-desktop
     libreoffice-fresh
