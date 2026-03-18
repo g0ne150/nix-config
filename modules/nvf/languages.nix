@@ -38,21 +38,21 @@
       ui.enable = true;
 
       mappings = {
-        continue = "<leader>dc"; # dc
-        goDown = "<leader>dj"; # dvi
-        goUp = "<leader>dk"; # dvo
+        # continue = "<leader>dc"; # dc
+        # goDown = "<leader>dj"; # dvi
+        # goUp = "<leader>dk"; # dvo
         # hover = "dh";
         # restart = "dR";
-        runLast = "<leader>dl"; # d.
-        runToCursor = "<leader>dC"; # dgc
+        # runLast = "<leader>dl"; # d.
+        # runToCursor = "<leader>dC"; # dgc
         # stepBack = "dgk";
-        stepInto = "<leader>di"; # dgi
-        stepOut = "<leader>do"; # dgo
-        stepOver = "<leader>dO"; # dgj
-        terminate = "<leader>dt"; # dq
-        toggleBreakpoint = "<leader>db"; # db
-        toggleDapUI = "<leader>du"; # du
-        toggleRepl = "<leader>dr"; # dr
+        # stepInto = "<leader>di"; # dgi
+        # stepOut = "<leader>do"; # dgo
+        # stepOver = "<leader>dO"; # dgj
+        # terminate = "<leader>dt"; # dq
+        # toggleBreakpoint = "<leader>db"; # db
+        # toggleDapUI = "<leader>du"; # du
+        # toggleRepl = "<leader>dr"; # dr
       };
     };
 

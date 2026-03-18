@@ -20,6 +20,7 @@
     cargo
 
     zig
+    lldb
 
     just
     gnumake
