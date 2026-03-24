@@ -29,7 +29,9 @@
       html.enable = true;
       css.enable = true;
       ts.enable = true;
+
       zig.enable = true;
+      zig.dap.enable = true;
 
     };
 
