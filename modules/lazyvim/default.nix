@@ -1,4 +1,4 @@
-{ lazyvim, ... }:
+{ pkgs, lazyvim, ... }:
 {
 
   home.sessionVariables = {
@@ -8,10 +8,31 @@
   programs.lazyvim = {
     enable = true;
     configFiles = ./lazyvim-config;
+    extraPackages = with pkgs; [
+      nixd
+      nixfmt
+      # pyright
+      # alejandra
+      # black
+      ripgrep
+      fd
+      tree-sitter
+      luajitPackages.luarocks
+      go
+      gofumpt
+      gotools
+      prettier
+      markdown-toc
+      markdownlint-cli2
+      shfmt
+      sqlfluff
+      stylua
+      lua
+    ];
     extras = {
       test.core.enable = true;
       coding.yanky.enable = true;
-      editor={
+      editor = {
         inc-rename.enable = true;
         dial.enable = true;
       };
@@ -28,9 +49,9 @@
         markdown.enable = true;
         nix.enable = true;
         java.enable = true;
-        python.enable =true; 
+        python.enable = true;
         rust.enable = true;
-        sql.enable= true;
+        sql.enable = true;
       };
     };
   };
