@@ -32,6 +32,7 @@
       sqlfluff
       stylua
       lua
+      jdt-language-server
     ];
 
     treesitterParsers = with pkgs.vimPlugins.nvim-treesitter.grammarPlugins; [
