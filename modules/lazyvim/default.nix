@@ -9,6 +9,9 @@
     enable = true;
     configFiles = ./lazyvim-config;
     extraPackages = with pkgs; [
+      git
+      curl
+      lazygit
       nixd
       nixfmt
       # pyright
@@ -16,6 +19,7 @@
       # black
       ripgrep
       fd
+      fzf
       tree-sitter
       luajitPackages.luarocks
       go
@@ -29,6 +33,16 @@
       stylua
       lua
     ];
+
+    treesitterParsers = with pkgs.vimPlugins.nvim-treesitter.grammarPlugins; [
+      # wgsl      # WebGPU Shading Language
+      # templ     # Go templ files
+      graphql
+      http
+      hyprlang
+      graphql
+    ];
+
     extras = {
       test.core.enable = true;
       coding.yanky.enable = true;

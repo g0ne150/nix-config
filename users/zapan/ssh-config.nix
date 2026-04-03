@@ -1,8 +1,9 @@
-{ ... }: {
+{ _ }:
+{
 
   programs.ssh = {
     enable = true;
-    # enableDefaultConfig = false;
+    enableDefaultConfig = false;
     matchBlocks = {
       "zeroclaw" = {
         hostname = "10.0.10.18";
@@ -64,6 +65,19 @@
         port = 22222;
         user = "root";
         identityFile = "~/.ssh/general";
+      };
+
+      "*" = {
+        forwardAgent = "no";
+        serverAliveInterval = 0;
+        serverAliveCountMax = 3;
+        compression = "no";
+        addKeysToAgent = "no";
+        hashKnownHosts = "no";
+        userKnownHostsFile = "~/.ssh/known_hosts";
+        controlMaster = "no";
+        controlPath = "~/.ssh/master-%r@%n:%p";
+        controlPersist = "no";
       };
     };
 
