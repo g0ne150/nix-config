@@ -68,12 +68,12 @@
       };
 
       "*" = {
-        forwardAgent = "no";
+        forwardAgent = false;
         serverAliveInterval = 0;
         serverAliveCountMax = 3;
-        compression = "no";
+        compression = false;
         addKeysToAgent = "no";
-        hashKnownHosts = "no";
+        hashKnownHosts = false;
         userKnownHostsFile = "~/.ssh/known_hosts";
         controlMaster = "no";
         controlPath = "~/.ssh/master-%r@%n:%p";
