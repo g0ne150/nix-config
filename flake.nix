@@ -19,8 +19,12 @@
       inputs.darwin.follows = "";
     };
 
-    nvf = {
-      url = "github:NotAShelf/nvf";
+    # nvf = {
+    #   url = "github:NotAShelf/nvf";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
+    lazyvim = {
+      url = "github:pfassina/lazyvim-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -31,7 +35,8 @@
       nixpkgs,
       home-manager,
       agenix,
-      nvf,
+      # nvf,
+      lazyvim,
       ...
     }:
     {
@@ -52,7 +57,8 @@
                 backupFileExtension = "backup";
                 extraSpecialArgs = {
                   ageSecrets = config.age.secrets;
-                  inherit nvf;
+                  # inherit nvf;
+                  inherit lazyvim;
                 };
               };
             }

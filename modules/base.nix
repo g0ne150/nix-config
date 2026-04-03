@@ -1,8 +1,15 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   nix.settings = {
-    experimental-features = [ "nix-command" "flakes" ];
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
 
-    substituters = [ "https://mirrors.ustc.edu.cn/nix-channels/store" ];
+    substituters = [
+      # "https://mirrors.ustc.edu.cn/nix-channels/store"
+      "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
+    ];
   };
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
@@ -18,7 +25,7 @@
     extraLocales = [ "zh_CN.UTF-8/UTF-8" ];
   };
 
-  # replace by gnome keyring 
+  # replace by gnome keyring
   # programs.ssh.startAgent = true;
 
   # do not need to keep too much generations

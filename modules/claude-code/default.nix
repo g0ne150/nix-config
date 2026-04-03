@@ -18,7 +18,7 @@ in
     source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix-config/nix-dotfiles/dot_claude/CLAUDE.md";
   };
   programs.claude-code = {
-    enable = true;
+    enable = false;
     # mcpServers = {
     # };
     skillsDir = ./skills;

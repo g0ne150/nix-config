@@ -1,7 +1,6 @@
 {
   config,
   pkgs,
-  home-manager,
   ...
 }:
 let
@@ -73,6 +72,7 @@ in
       name = "Adwaita-dark";
       package = pkgs.gnome-themes-extra;
     };
+    gtk4.theme = config.gtk.theme;
   };
 
   home.file.".local/share/fcitx5/rime/default.custom.yaml" = {
@@ -124,7 +124,8 @@ in
     ../../modules/hyprlock.nix
     ../../modules/clipboard.nix
     ../../modules/nodejs.nix
-    ../../modules/nvf
+    # ../../modules/nvf
+    ../../modules/lazyvim
     ../../modules/rbw-ui.nix
     ../../modules/cursor.nix
     ../../modules/default-apps.nix
