@@ -1,6 +1,3 @@
--- TODO 如何在外部添加配置 LazyExtra lang.java？
-require("mason")
-
 local get_package_install_path = function(package_name)
   return vim.fn.expand("$MASON/packages/" .. package_name)
 end

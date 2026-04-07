@@ -33,6 +33,7 @@
       stylua
       lua
       jdt-language-server
+      vscode-extensions.vscjava.vscode-java-dependency
     ];
 
     treesitterParsers = with pkgs.vimPlugins.nvim-treesitter.grammarPlugins; [

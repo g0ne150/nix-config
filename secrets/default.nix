@@ -59,6 +59,11 @@
         group = "users";
         mode = "440";
       };
+      openrouter_api_key = {
+        file = ./openrouter_default_api_key.age;
+        group = "users";
+        mode = "440";
+      };
       brave_search_api_key = {
         file = ./brave_search_api_key.age;
         group = "users";
