@@ -4,7 +4,10 @@
   home.sessionVariables = {
     EDITOR = "nvim";
   };
-  imports = [ lazyvim.homeManagerModules.default ];
+  imports = [
+    lazyvim.homeManagerModules.default
+    ./jdtls.nix
+  ];
   programs.lazyvim = {
     enable = true;
     configFiles = ./lazyvim-config;
@@ -32,8 +35,6 @@
       sqlfluff
       stylua
       lua
-      jdt-language-server
-      vscode-extensions.vscjava.vscode-java-dependency
     ];
 
     treesitterParsers = with pkgs.vimPlugins.nvim-treesitter.grammarPlugins; [
@@ -64,7 +65,6 @@
         json.enable = true;
         markdown.enable = true;
         nix.enable = true;
-        java.enable = true;
         python.enable = true;
         rust.enable = true;
         sql.enable = true;

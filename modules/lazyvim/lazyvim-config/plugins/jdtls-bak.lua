@@ -1,3 +1,5 @@
+if true then return {} end
+
 local get_package_install_path = function(package_name)
   return vim.fn.expand("$MASON/packages/" .. package_name)
 end
