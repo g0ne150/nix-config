@@ -149,11 +149,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1775598298,
-        "narHash": "sha256-FZRwskiertE+8wgFKjLoc/41UrVqzR2V3QseMBHuo/g=",
+        "lastModified": 1775683737,
+        "narHash": "sha256-oBYyowo6yfgb95Z78s3uTnAd9KkpJpwzjJbfnpLaM2Y=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "98b4d61cfaf825c8b691afae0b6e152f0cc05c86",
+        "rev": "7ba4ee4228ed36123c7cb75d50524b43514ef992",
         "type": "github"
       },
       "original": {
@@ -170,15 +170,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1775153946,
-        "narHash": "sha256-qwscL94rENDe301j33QLotuI8+a8QgmBw3I2ir9fKZU=",
-        "owner": "pfassina",
+        "lastModified": 1775726512,
+        "narHash": "sha256-vdj6c4qEz11rQN5/yk92Hf5fbbDaID7s30lLr0x59jw=",
+        "owner": "g0ne150",
         "repo": "lazyvim-nix",
-        "rev": "c1c27d9b3fd74d243a34985c5440a14aa0c2a169",
+        "rev": "8ddb559ba7aa058a31f9c105dcd99a65c4c3f474",
         "type": "github"
       },
       "original": {
-        "owner": "pfassina",
+        "owner": "g0ne150",
         "repo": "lazyvim-nix",
         "type": "github"
       }

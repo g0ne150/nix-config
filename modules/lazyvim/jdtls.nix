@@ -21,7 +21,6 @@
           table.insert(bundles, bundle)
         end
       end
-      # vim.notify(vim.json.encode(bundles))
       return {
         "mfussenegger/nvim-jdtls",
         opts = function(_, opts)
