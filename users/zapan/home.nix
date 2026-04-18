@@ -131,6 +131,7 @@ in
     ../../modules/default-apps.nix
     ../../modules/claude-code
     ../../modules/obsidian.nix
+    ../../modules/syncthing.nix
   ];
 
   home.stateVersion = "25.05";
