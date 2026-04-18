@@ -68,6 +68,7 @@
         python.enable = true;
         rust.enable = true;
         sql.enable = true;
+        yaml.enable = true;
       };
     };
   };
