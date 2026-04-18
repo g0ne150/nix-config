@@ -130,6 +130,7 @@ in
     ../../modules/cursor.nix
     ../../modules/default-apps.nix
     ../../modules/claude-code
+    ../../modules/obsidian.nix
   ];
 
   home.stateVersion = "25.05";
