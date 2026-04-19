@@ -17,11 +17,14 @@ in
   home.file.".claude/CLAUDE.md" = {
     source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix-config/nix-dotfiles/dot_claude/CLAUDE.md";
   };
+  home.file.".claude/settings.json" = {
+    source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix-config/nix-dotfiles/dot_claude/settings.json";
+  };
   programs.claude-code = {
     enable = true;
     # mcpServers = {
     # };
-    skillsDir = ./skills;
+    skills = ./skills;
   };
 
   home.file.".local/bin/claude-qwen" = {
