@@ -37,7 +37,7 @@
       lua
       yaml-language-server
       marksman
-      jsonls
+      vscode-langservers-extracted
     ];
 
     treesitterParsers = with pkgs.vimPlugins.nvim-treesitter.grammarPlugins; [
