@@ -36,6 +36,8 @@
       stylua
       lua
       yaml-language-server
+      marksman
+      jsonls
     ];
 
     treesitterParsers = with pkgs.vimPlugins.nvim-treesitter.grammarPlugins; [
