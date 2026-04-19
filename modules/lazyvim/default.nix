@@ -15,7 +15,7 @@
       git
       curl
       lazygit
-      nixd
+      nil
       nixfmt
       # pyright
       # alejandra

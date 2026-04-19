@@ -2,6 +2,7 @@
 {
   services.syncthing = {
     enable = true;
+
     settings = {
       devices = {
         zapan-club = {
@@ -10,6 +11,20 @@
           addresses = [ "quic://zapan.club:22000" ];
         };
       };
+
+      folders = {
+        notebook = {
+          id = "mtdec-j6adp";
+          path = "~/notebook";
+          devices = [ "zapan-club" ];
+          versioning = {
+            type = "simple";
+            params.keep = "5";
+          };
+        };
+      };
+
     };
+
   };
 }
