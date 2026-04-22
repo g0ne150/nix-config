@@ -107,8 +107,8 @@ in
     bash = {
       enable = true;
       shellAliases = {
-        proxy-on = "export {all,http,https}_proxy=http://127.0.0.1:1080;";
-        proxy-off = "unset {all,http,https}_proxy";
+        proxy-on = "export {all,http,https,ws,wss}_proxy=http://127.0.0.1:1080;";
+        proxy-off = "unset {all,http,https,ws,wss}_proxy";
       };
     };
 
