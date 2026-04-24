@@ -17,7 +17,8 @@
 
     qutebrowser
     nautilus
-    evolution
+    # evolution
+    thunderbird
     papers
     loupe # Image viewer
     gnome-text-editor
@@ -34,7 +35,7 @@
 
       "inode/directory" = "org.gnome.Nautilus.desktop;";
 
-      "x-scheme-handler/mailto" = "org.gnome.Evolution.desktop";
+      "x-scheme-handler/mailto" = "thunderbird.desktop";
 
       "application/pdf" = "org.gnome.Papers.desktop";
 
