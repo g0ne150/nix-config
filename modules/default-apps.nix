@@ -41,6 +41,7 @@
       "image/jpeg" = "org.gnome.Loupe.desktop";
       "image/png" = "org.gnome.Loupe.desktop";
 
+      "text/markdown" = "org.gnome.TextEditor.desktop";
       "text/plain" = "org.gnome.TextEditor.desktop";
     };
   };
