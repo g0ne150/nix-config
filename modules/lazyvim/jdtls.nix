@@ -1,3 +1,4 @@
+# jdtls 相关问题，记得先运行 `:JdtWipeDataAndRestart` 重试
 { pkgs, lib, ... }:
 let
   vscode-extension-path = "share/vscode/extensions";
