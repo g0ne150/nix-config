@@ -11,7 +11,7 @@
     statix
     mpv
     jellyfin-mpv-shim
-    wechat-uos
+    wechat-uos # works with `i18n.inputMethod.fcitx5.waylandFrontend = true`
     # (wechat.overrideAttrs (oldAttrs: {
     #   src = pkgs.fetchurl {
     #     url = "https://dldir1v6.qq.com/weixin/Universal/Linux/WeChatLinux_x86_64.AppImage";
