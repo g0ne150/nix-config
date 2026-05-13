@@ -23,6 +23,7 @@
     gnome-font-viewer
     telegram-desktop
     libreoffice-fresh
+    wpsoffice-cn
     drawio
   ];
 
