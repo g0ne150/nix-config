@@ -11,13 +11,13 @@
     statix
     mpv
     jellyfin-mpv-shim
-    # wechat
-    (wechat.overrideAttrs (oldAttrs: {
-      src = pkgs.fetchurl {
-        url = "https://dldir1v6.qq.com/weixin/Universal/Linux/WeChatLinux_x86_64.AppImage";
-        hash = "sha256-XxAvFnlljqurGPDgRr+DnuCKbdVvgXBPh02DLHY3Oz8=";
-      };
-    }))
+    wechat-uos
+    # (wechat.overrideAttrs (oldAttrs: {
+    #   src = pkgs.fetchurl {
+    #     url = "https://dldir1v6.qq.com/weixin/Universal/Linux/WeChatLinux_x86_64.AppImage";
+    #     hash = "sha256-XxAvFnlljqurGPDgRr+DnuCKbdVvgXBPh02DLHY3Oz8=";
+    #   };
+    # }))
     # xorg.xprop
     xprop
     gnome-font-viewer
