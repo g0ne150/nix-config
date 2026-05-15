@@ -130,6 +130,7 @@ in
     ../../modules/cursor.nix
     ../../modules/default-apps.nix
     ../../modules/claude-code
+    ../../modules/shell-gpt.nix
     ../../modules/obsidian.nix
     ../../modules/syncthing.nix
   ];
