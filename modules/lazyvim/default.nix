@@ -37,6 +37,7 @@
       lua
       yaml-language-server
       marksman
+      rust-analyzer
       vscode-langservers-extracted
     ];
 
